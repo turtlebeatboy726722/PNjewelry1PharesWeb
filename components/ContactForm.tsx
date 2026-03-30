@@ -5,7 +5,7 @@ import { useState } from "react";
 type Status = "idle" | "loading" | "success" | "error";
 
 export default function ContactForm() {
-  const [form, setForm] = useState({ name: "", email: "", company: "", product: "", quantity: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", brandName: "", productType: "", quantity: "", message: "" });
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -19,7 +19,7 @@ export default function ContactForm() {
     setErrorMsg("");
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://pn-leads.onrender.com/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -27,7 +27,7 @@ export default function ContactForm() {
 
       if (res.ok) {
         setStatus("success");
-        setForm({ name: "", email: "", company: "", product: "", quantity: "", message: "" });
+        setForm({ name: "", email: "", brandName: "", productType: "", quantity: "", message: "" });
       } else {
         throw new Error("API error");
       }
@@ -111,7 +111,7 @@ export default function ContactForm() {
           </label>
           <input
             type="text"
-            name="company"
+            name="brandName"
             value={form.company}
             onChange={handleChange}
             placeholder="Your brand name"
@@ -123,7 +123,7 @@ export default function ContactForm() {
             Product Interest
           </label>
           <select
-            name="product"
+            name="productType"
             value={form.product}
             onChange={handleChange}
             className="form-input"
