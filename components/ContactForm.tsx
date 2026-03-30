@@ -33,9 +33,9 @@ export default function ContactForm() {
       }
     } catch {
       // Fallback: open mailto
-      const subject = encodeURIComponent(`OEM Inquiry from ${form.name} — ${form.company}`);
+      const subject = encodeURIComponent(`OEM Inquiry from ${form.name} — ${form.brandName}`);
       const body = encodeURIComponent(
-        `Name: ${form.name}\nEmail: ${form.email}\nCompany: ${form.company}\nProduct Interest: ${form.product}\nQuantity: ${form.quantity}\n\nMessage:\n${form.message}`
+        `Name: ${form.name}\nEmail: ${form.email}\nCompany: ${form.brandName}\nProduct Interest: ${form.productType}\nQuantity: ${form.quantity}\n\nMessage:\n${form.message}`
       );
       window.open(`mailto:sale@pnjewelrymfg.com?subject=${subject}&body=${body}`, "_blank");
       setStatus("error");
@@ -112,7 +112,7 @@ export default function ContactForm() {
           <input
             type="text"
             name="brandName"
-            value={form.company}
+            value={form.brandName}
             onChange={handleChange}
             placeholder="Your brand name"
             className="form-input"
@@ -124,7 +124,7 @@ export default function ContactForm() {
           </label>
           <select
             name="productType"
-            value={form.product}
+            value={form.productType}
             onChange={handleChange}
             className="form-input"
             style={{ cursor: "pointer" }}
