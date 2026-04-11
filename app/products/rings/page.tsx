@@ -9,15 +9,15 @@ export const metadata: Metadata = {
 };
 
 const rings = [
-  { id: "r1", img: "ring-1.jpg", title: "Stackable Band", material: "Sterling Silver 925" },
-  { id: "r2", img: "ring-2.jpg", title: "Solitaire Prong", material: "18k Gold Plated" },
-  { id: "r3", img: "ring-3.jpg", title: "Pavé Statement", material: "Rose Gold · CZ Set" },
-  { id: "r4", img: "ring-4.jpg", title: "Twisted Band", material: "Sterling Silver 925" },
-  { id: "r5", img: "ring-5.jpg", title: "Bezel Set Stone", material: "Gold Vermeil" },
-  { id: "r6", img: "ring-6.jpg", title: "Signet Ring", material: "Oxidized Silver" },
-  { id: "r7", img: "ring-7.jpg", title: "Cluster Ring", material: "18k Gold Plated" },
-  { id: "r8", img: "ring-8.jpg", title: "Open Bangle Ring", material: "Sterling Silver 925" },
-  { id: "r9", img: "ring-9.jpg", title: "Filigree Band", material: "Rose Gold Plated" },
+  { id: "r1", img: "ring-1.jpg", title: "Eternity Band", material: "Sterling Silver 925" },
+  { id: "r2", img: "ring-2.jpg", title: "Chain Ring", material: "Sterling Silver 925" },
+  { id: "r3", img: "ring-3.jpg", title: "Emerald Ring", material: "Yellow Gold · Birth Stone" },
+  { id: "r4", img: "ring-4.jpg", title: "Solitaire Ring", material: "Sterling Silver 925 · Round CZ Solitaire" },
+  { id: "r5", img: "ring-5.jpg", title: "Triple Row Ring", material: "Sterling Silver 925 · Triple Channel-Set CZ Ring" },
+  { id: "r6", img: "ring-6.jpg", title: "Solitaire Ring II", material: "Sterling Silver 925 · Oval CZ Solitaire" },
+  { id: "r7", img: "ring-7.jpg", title: "Solitaire Ring III", material: "Sterling Silver 925 · Oval CZ Solitaire" },
+  { id: "r8", img: "ring-8.jpg", title: "Bar Set Band", material: "Sterling Silver 925 · Geometric Bar-Set CZ Band" },
+  { id: "r9", img: "ring-9.jpg", title: "Twisted Band", material: "Sterling Silver 925 · Twisted Infinity CZ Band" },
 ];
 
 export default function RingsPage() {
