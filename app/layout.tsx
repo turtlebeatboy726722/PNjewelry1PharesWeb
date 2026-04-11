@@ -28,6 +28,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     siteName: "P&N Jewelry Limited Partnership",
   },
+  verification: {
+    google: "lAE1QjmOh2w1Rx7zI4DzGH_i9l1237XlVgNDvmloMwk",
+  },
 };
 
 export default function RootLayout({
