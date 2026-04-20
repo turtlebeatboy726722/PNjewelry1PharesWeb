@@ -1,0 +1,16 @@
+export const metadata = {
+  title: 'Jewelry Manufacturing Blog | P&N Jewelry Thailand',
+  description: 'Guides and insights on OEM jewelry manufacturing, sourcing, and private label brands.',
+}
+
+export default function BlogPage() {
+  return (
+    <main>
+      <h1>Jewelry Manufacturing Insights</h1>
+      <ul>
+        <li><a href="/blog/low-moq-jewelry-manufacturing">Low MOQ Jewelry Manufacturing</a></li>
+        {/* เพิ่ม blog อื่นๆ ทีหลัง */}
+      </ul>
+    </main>
+  )
+}
