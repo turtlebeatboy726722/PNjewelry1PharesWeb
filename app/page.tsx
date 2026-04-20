@@ -6,12 +6,12 @@ import SafeImage from "@/components/SafeImage";
 export const metadata: Metadata = {
   title: "P&N Jewelry | OEM Jewelry Manufacturer Thailand — 40+ Years",
   description:
-    "Thailand's premier OEM jewelry manufacturer with 40+ years of experience. Serving global brands in USA, Spain and beyond. Low MOQ 50 pcs. Request your free quote today.",
+    "Thailand's premier OEM jewelry manufacturer with 40+ years of experience. Serving global brands in USA, Spain and beyond. Low MOQ from 30 pieces. Request your free quote today.",
 };
 
 const stats = [
   { value: "40+", label: "Years Experience" },
-  { value: "50", label: "Min. Order Qty" },
+  { value: "30", label: "Min. Order Qty" },
   { value: "100%", label: "OEM Service" },
   { value: "2", label: "Global Markets" },
 ];
@@ -91,8 +91,8 @@ const whyUs = [
   },
   {
     icon: "◇",
-    title: "Low MOQ — 50 Pcs",
-    desc: "Start small, scale fast. Ideal for boutique brands and new collections.",
+    title: "Low MOQ — 30 Pcs",
+    desc: "Start small, scale fast. Minimum order of just 30 pieces per design — ideal for boutique brands and new collections.",
   },
   {
     icon: "◉",
@@ -169,10 +169,22 @@ export default function HomePage() {
           </h1>
 
           <p
-            className="text-charcoal-300 text-sm tracking-widest mb-12 animate-fade-up"
+            className="text-charcoal-300 text-sm tracking-widest mb-6 animate-fade-up"
             style={{ animationDelay: "0.7s", opacity: 0, animationFillMode: "forwards" }}
           >
             OEM · Private Label · Full-Service Production · Bangkok, Thailand
+          </p>
+
+          {/* SEO Body Text */}
+          <p
+            className="text-charcoal-400 text-sm leading-relaxed mb-10 max-w-2xl mx-auto animate-fade-up"
+            style={{ animationDelay: "0.8s", opacity: 0, animationFillMode: "forwards" }}
+          >
+            P&N Jewelry is a Bangkok-based OEM jewelry manufacturer with over 40 years
+            of production experience. We manufacture custom jewelry for independent brands,
+            private label collections, and established retailers worldwide — from initial
+            CAD design through final quality inspection, entirely under one roof.
+            Minimum order starts at 30 pieces per design.
           </p>
 
           <div
@@ -240,16 +252,21 @@ export default function HomePage() {
                 <span className="italic gold-text">Precision</span>
               </h2>
               <p className="text-charcoal-500 text-sm leading-relaxed mb-4">
-                Founded in Thailand and refined over four decades, P&N Jewelry
-                Limited Partnership has grown into a trusted OEM manufacturing
-                partner for jewelry brands worldwide. We combine traditional
-                Thai craftsmanship with modern production technology.
+                P&N Jewelry Limited Partnership was established in Bangkok, Thailand in the
+                1980s as a specialized artisan workshop. Over four decades, we expanded our
+                capabilities, modernized our production infrastructure, and developed the OEM
+                manufacturing expertise that defines our business today.
+              </p>
+              <p className="text-charcoal-500 text-sm leading-relaxed mb-4">
+                Our production facility handles every stage of manufacturing in-house: 3D CAD
+                design, lost-wax casting, hand polishing, stone setting, electroplating, and
+                final quality control. By maintaining complete vertical integration, we eliminate
+                subcontracting delays and ensure consistent quality across every production run.
               </p>
               <p className="text-charcoal-500 text-sm leading-relaxed mb-8">
-                From initial design consultation to final quality inspection,
-                every piece reflects our uncompromising commitment to
-                excellence. Our Bangkok facility handles complete end-to-end
-                jewelry production.
+                We do not subcontract. Every piece produced under the P&N name is manufactured,
+                inspected, and packed within our own facility — giving our clients a single point
+                of accountability from sample approval through final shipment.
               </p>
               <Link href="/about" className="btn-gold text-xs">
                 Our Full Story
@@ -292,6 +309,11 @@ export default function HomePage() {
                 From Concept to{" "}
                 <span className="italic gold-text">Creation</span>
               </h2>
+              <p className="text-charcoal-400 text-sm mt-4 max-w-xl mx-auto leading-relaxed">
+                Every production run at P&N Jewelry follows a structured five-stage process —
+                from your initial design brief through casting, finishing, and final quality
+                inspection before shipment.
+              </p>
             </div>
           </RevealOnScroll>
 
