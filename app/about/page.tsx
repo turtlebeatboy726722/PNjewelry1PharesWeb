@@ -4,11 +4,10 @@ import PageHero from "@/components/PageHero";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import SafeImage from "@/components/SafeImage";
 
-export const metadata: Metadata = {
-  title: "About Us — 40 Years of OEM Jewelry Manufacturing",
-  description:
-    "Learn about P&N Jewelry's 40+ year legacy as a leading OEM jewelry manufacturer in Bangkok, Thailand. Expert craftsmanship for global brands.",
-};
+export const metadata = {
+  title: 'About P&N Jewelry | OEM Manufacturer Bangkok Thailand Since 1980s',
+  description: 'Founded in Bangkok in the 1980s, P&N Jewelry has 40+ years of OEM manufacturing experience. Learn about our history, values, and why global brands choose us.',
+}
 
 const milestones = [
   { year: "1980s", title: "Founded in Bangkok", desc: "Established as a small family workshop specializing in sterling silver jewelry for local markets." },

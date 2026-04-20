@@ -4,11 +4,10 @@ import PageHero from "@/components/PageHero";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import SafeImage from "@/components/SafeImage";
 
-export const metadata: Metadata = {
-  title: "OEM Jewelry Services — Design to Delivery",
-  description:
-    "Full-service OEM jewelry manufacturing: design, casting, polishing, stone setting, and plating. P&N Jewelry handles every step in our Bangkok factory.",
-};
+export const metadata = {
+  title: 'OEM Jewelry Manufacturing Services | CAD Design to Delivery | P&N Jewelry Thailand',
+  description: 'Full-service OEM jewelry manufacturing in Bangkok. CAD design, lost-wax casting, stone setting, plating, QC. Silver 925, gold 9k–18k. MOQ 30 pieces.',
+}
 
 const process = [
   {
