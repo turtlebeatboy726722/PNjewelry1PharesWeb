@@ -7,7 +7,7 @@ import SafeImage from "@/components/SafeImage";
 export const metadata: Metadata = {
   title: "Why Choose P&N Jewelry — 40 Years OEM Manufacturing",
   description:
-    "Discover why global brands choose P&N Jewelry: 40+ years experience, low MOQ 50 pcs, full-service OEM, and trusted by USA & Spain brands.",
+    "Discover why global brands choose P&N Jewelry: 40+ years experience, low MOQ 30 pcs, full-service OEM, and trusted by USA & Spain brands.",
 };
 
 const advantages = [
@@ -19,8 +19,8 @@ const advantages = [
   },
   {
     icon: "◇",
-    title: "Low MOQ — Just 50 Pieces",
-    desc: "Most large manufacturers require thousands of pieces. We start at 50 pieces per design, making high-quality OEM manufacturing accessible to boutique brands, startups, and emerging designers.",
+    title: "Low MOQ — Just 30 Pieces",
+    desc: "Most large manufacturers require thousands of pieces. We start at 30 pieces per design, making high-quality OEM manufacturing accessible to boutique brands, startups, and emerging designers.",
     detail: "Our low MOQ policy allows you to test new designs, launch limited editions, or start a new brand without the financial risk of massive inventory commitments.",
   },
   {
@@ -128,7 +128,7 @@ export default function WhyUsPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[
               { num: "40+", label: "Years in Business" },
-              { num: "50", label: "Minimum Order Qty" },
+              { num: "30", label: "Minimum Order Qty" },
               { num: "100%", label: "In-house Production" },
               { num: "2", label: "International Markets" },
             ].map((s, i) => (
