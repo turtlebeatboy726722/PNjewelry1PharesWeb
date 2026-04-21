@@ -5,13 +5,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/products", label: "Products" },
-  { href: "/why-us", label: "Why Us" },
+  { href: "/",        label: "Home" },
+  { href: "/about",   label: "About" },
+  { href: "/services",label: "Services" },
+  { href: "/products",label: "Products" },
+  { href: "/why-us",  label: "Why Us" },
+  { href: "/blog",    label: "Blog" },     
   { href: "/contact", label: "Contact" },
 ];
+
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
