@@ -13,7 +13,7 @@ const stats = [
   { value: "40+", label: "Years Experience" },
   { value: "30", label: "Min. Order Qty" },
   { value: "100%", label: "OEM Service" },
-  { value: "2", label: "Global Markets" },
+  { value: "+20", label: "USA, Japan & Europe" },
 ];
 
 const services = [
