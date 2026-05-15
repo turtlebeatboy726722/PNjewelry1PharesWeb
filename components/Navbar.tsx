@@ -5,15 +5,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { href: "/",        label: "Home" },
-  { href: "/about",   label: "About" },
-  { href: "/services",label: "Services" },
-  { href: "/products",label: "Products" },
-  { href: "/why-us",  label: "Why Us" },
-  { href: "/blog",    label: "Blog" },     
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/products", label: "Products" },
+  { href: "/why-us", label: "Why Us" },
+  { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
-
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -70,7 +69,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-10">
+          <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -95,45 +94,24 @@ export default function Navbar() {
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
-            <span
-              className={`block w-6 h-px transition-all duration-300 ${
-                scrolled || !isHome ? "bg-charcoal-900" : "bg-white"
-              } ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
-            />
-            <span
-              className={`block w-6 h-px transition-all duration-300 ${
-                scrolled || !isHome ? "bg-charcoal-900" : "bg-white"
-              } ${menuOpen ? "opacity-0" : ""}`}
-            />
-            <span
-              className={`block w-6 h-px transition-all duration-300 ${
-                scrolled || !isHome ? "bg-charcoal-900" : "bg-white"
-              } ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
-            />
+            <span className={`block w-6 h-px transition-all duration-300 ${scrolled || !isHome ? "bg-charcoal-900" : "bg-white"} ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+            <span className={`block w-6 h-px transition-all duration-300 ${scrolled || !isHome ? "bg-charcoal-900" : "bg-white"} ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`block w-6 h-px transition-all duration-300 ${scrolled || !isHome ? "bg-charcoal-900" : "bg-white"} ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
           </button>
         </div>
       </header>
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 lg:hidden transition-opacity duration-400 ${
-          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        }`}
+        className={`fixed inset-0 z-40 lg:hidden transition-opacity duration-400 ${menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
         style={{ background: "rgba(0,0,0,0.5)" }}
         onClick={() => setMenuOpen(false)}
       />
 
       {/* Mobile Menu Panel */}
-      <div
-        className={`mobile-menu fixed top-0 right-0 h-full w-80 bg-white z-50 lg:hidden flex flex-col ${
-          menuOpen ? "open" : ""
-        }`}
-      >
+      <div className={`mobile-menu fixed top-0 right-0 h-full w-80 bg-white z-50 lg:hidden flex flex-col ${menuOpen ? "open" : ""}`}>
         <div className="flex items-center justify-between px-8 h-20 border-b border-charcoal-100">
-          <span
-            className="font-display text-xl text-charcoal-900"
-            style={{ fontFamily: "var(--font-cormorant)" }}
-          >
+          <span className="font-display text-xl text-charcoal-900" style={{ fontFamily: "var(--font-cormorant)" }}>
             P<span style={{ color: "var(--gold)" }}>&</span>N Jewelry
           </span>
           <button onClick={() => setMenuOpen(false)} aria-label="Close menu">
@@ -146,9 +124,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`nav-link text-charcoal-900 text-sm ${
-                pathname === link.href ? "text-gold-400" : ""
-              }`}
+              className={`nav-link text-charcoal-900 text-sm ${pathname === link.href ? "text-gold-400" : ""}`}
             >
               {link.label}
             </Link>
