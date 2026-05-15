@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { name, email, company, product, quantity, message } = body;
+    const { name, email, whatsapp, company, product, quantity, message } = body;
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -34,6 +34,7 @@ New OEM Inquiry — P&N Jewelry Website
 
 Name: ${name}
 Email: ${email}
+WhatsApp: ${whatsapp || "—"}
 Company: ${company || "—"}
 Product Interest: ${product || "—"}
 Quantity: ${quantity || "—"}
@@ -42,6 +43,7 @@ Message:
 ${message}
 
 ---
+${whatsapp ? `Reply via WhatsApp: https://wa.me/${whatsapp.replace(/[^0-9]/g, "")}` : ""}
 Sent from pnjewelrymfg.com contact form
     `.trim();
 
@@ -55,7 +57,7 @@ Sent from pnjewelrymfg.com contact form
         from: "P&N Jewelry Website <noreply@pnjewelrymfg.com>",
         to: ["sale@pnjewelrymfg.com"],
         reply_to: email,
-        subject: `OEM Inquiry from ${name}${company ? ` — ${company}` : ""}`,
+        subject: `OEM Inquiry from ${name}${company ? ` — ${company}` : ""}${whatsapp ? ` [WhatsApp: ${whatsapp}]` : ""}`,
         text: emailContent,
       }),
     });

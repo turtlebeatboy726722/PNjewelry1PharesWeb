@@ -5,11 +5,21 @@ import { useState } from "react";
 type Status = "idle" | "loading" | "success" | "error";
 
 export default function ContactForm() {
-  const [form, setForm] = useState({ name: "", email: "", brandName: "", productType: "", quantity: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    whatsapp: "",
+    company: "",
+    product: "",
+    quantity: "",
+    message: "",
+  });
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -19,7 +29,7 @@ export default function ContactForm() {
     setErrorMsg("");
 
     try {
-      const res = await fetch("https://pn-leads.onrender.com/api/lead", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -27,19 +37,33 @@ export default function ContactForm() {
 
       if (res.ok) {
         setStatus("success");
-        setForm({ name: "", email: "", brandName: "", productType: "", quantity: "", message: "" });
+        setForm({
+          name: "",
+          email: "",
+          whatsapp: "",
+          company: "",
+          product: "",
+          quantity: "",
+          message: "",
+        });
       } else {
         throw new Error("API error");
       }
     } catch {
-      // Fallback: open mailto
-      const subject = encodeURIComponent(`OEM Inquiry from ${form.name} — ${form.brandName}`);
-      const body = encodeURIComponent(
-        `Name: ${form.name}\nEmail: ${form.email}\nCompany: ${form.brandName}\nProduct Interest: ${form.productType}\nQuantity: ${form.quantity}\n\nMessage:\n${form.message}`
+      const subject = encodeURIComponent(
+        `OEM Inquiry from ${form.name} — ${form.company}`
       );
-      window.open(`mailto:sale@pnjewelrymfg.com?subject=${subject}&body=${body}`, "_blank");
+      const body = encodeURIComponent(
+        `Name: ${form.name}\nEmail: ${form.email}\nWhatsApp: ${form.whatsapp}\nCompany: ${form.company}\nProduct Interest: ${form.product}\nQuantity: ${form.quantity}\n\nMessage:\n${form.message}`
+      );
+      window.open(
+        `mailto:sale@pnjewelrymfg.com?subject=${subject}&body=${body}`,
+        "_blank"
+      );
       setStatus("error");
-      setErrorMsg("Our server is unavailable. Your email client has been opened as a fallback.");
+      setErrorMsg(
+        "Our server is unavailable. Your email client has been opened as a fallback."
+      );
     }
   };
 
@@ -47,9 +71,17 @@ export default function ContactForm() {
     return (
       <div
         className="border border-charcoal-200 p-12 text-center"
-        style={{ minHeight: "400px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}
+        style={{
+          minHeight: "400px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
       >
-        <div className="text-4xl mb-6" style={{ color: "var(--gold)" }}>◇</div>
+        <div className="text-4xl mb-6" style={{ color: "var(--gold)" }}>
+          ◇
+        </div>
         <h3
           className="font-display text-3xl text-charcoal-900 mb-4"
           style={{ fontFamily: "var(--font-cormorant)" }}
@@ -57,7 +89,8 @@ export default function ContactForm() {
           Message Sent
         </h3>
         <p className="text-charcoal-500 text-sm mb-8 max-w-xs leading-relaxed">
-          Thank you for your inquiry. Our team will respond within 24–48 business hours.
+          Thank you for your inquiry. Our team will respond within 24–48
+          business hours via email or WhatsApp.
         </p>
         <button
           onClick={() => setStatus("idle")}
@@ -73,6 +106,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="border border-charcoal-200 p-10 lg:p-12">
       <p className="section-label mb-8">Inquiry Form</p>
 
+      {/* Name + Email */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         <div>
           <label className="block text-[10px] tracking-widest text-charcoal-400 uppercase mb-2">
@@ -104,6 +138,7 @@ export default function ContactForm() {
         </div>
       </div>
 
+      {/* Company + WhatsApp */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         <div>
           <label className="block text-[10px] tracking-widest text-charcoal-400 uppercase mb-2">
@@ -111,8 +146,8 @@ export default function ContactForm() {
           </label>
           <input
             type="text"
-            name="brandName"
-            value={form.brandName}
+            name="company"
+            value={form.company}
             onChange={handleChange}
             placeholder="Your brand name"
             className="form-input"
@@ -120,11 +155,31 @@ export default function ContactForm() {
         </div>
         <div>
           <label className="block text-[10px] tracking-widest text-charcoal-400 uppercase mb-2">
+            WhatsApp Number
+          </label>
+          <input
+            type="tel"
+            name="whatsapp"
+            value={form.whatsapp}
+            onChange={handleChange}
+            placeholder="+1 234 567 8900"
+            className="form-input"
+          />
+          <p className="text-[10px] text-charcoal-400 mt-1">
+            We'll contact you directly via WhatsApp
+          </p>
+        </div>
+      </div>
+
+      {/* Product + Quantity */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div>
+          <label className="block text-[10px] tracking-widest text-charcoal-400 uppercase mb-2">
             Product Interest
           </label>
           <select
-            name="productType"
-            value={form.productType}
+            name="product"
+            value={form.product}
             onChange={handleChange}
             className="form-input"
             style={{ cursor: "pointer" }}
@@ -133,32 +188,33 @@ export default function ContactForm() {
             <option value="Rings">Rings</option>
             <option value="Necklaces">Necklaces</option>
             <option value="Bracelets">Bracelets</option>
+            <option value="Earrings">Earrings</option>
             <option value="Multiple Categories">Multiple Categories</option>
             <option value="Custom Design">Custom Design</option>
           </select>
         </div>
+        <div>
+          <label className="block text-[10px] tracking-widest text-charcoal-400 uppercase mb-2">
+            Estimated Quantity
+          </label>
+          <select
+            name="quantity"
+            value={form.quantity}
+            onChange={handleChange}
+            className="form-input"
+            style={{ cursor: "pointer" }}
+          >
+            <option value="">Select quantity range</option>
+            <option value="50–200 pcs">50–200 pcs (Starter)</option>
+            <option value="200–500 pcs">200–500 pcs</option>
+            <option value="500–1000 pcs">500–1,000 pcs</option>
+            <option value="1000+ pcs">1,000+ pcs</option>
+            <option value="Not yet decided">Not yet decided</option>
+          </select>
+        </div>
       </div>
 
-      <div className="mb-8">
-        <label className="block text-[10px] tracking-widest text-charcoal-400 uppercase mb-2">
-          Estimated Quantity
-        </label>
-        <select
-          name="quantity"
-          value={form.quantity}
-          onChange={handleChange}
-          className="form-input"
-          style={{ cursor: "pointer" }}
-        >
-          <option value="">Select quantity range</option>
-          <option value="50–200 pcs">50–200 pcs (Starter)</option>
-          <option value="200–500 pcs">200–500 pcs</option>
-          <option value="500–1000 pcs">500–1,000 pcs</option>
-          <option value="1000+ pcs">1,000+ pcs</option>
-          <option value="Not yet decided">Not yet decided</option>
-        </select>
-      </div>
-
+      {/* Message */}
       <div className="mb-10">
         <label className="block text-[10px] tracking-widest text-charcoal-400 uppercase mb-2">
           Message *
@@ -178,7 +234,10 @@ export default function ContactForm() {
       {status === "error" && (
         <div
           className="mb-6 p-4 text-xs text-charcoal-600 border"
-          style={{ borderColor: "var(--gold)", background: "rgba(201,168,76,0.05)" }}
+          style={{
+            borderColor: "var(--gold)",
+            background: "rgba(201,168,76,0.05)",
+          }}
         >
           {errorMsg}
         </div>
@@ -201,6 +260,14 @@ export default function ContactForm() {
             className="text-[11px] text-charcoal-600 hover:text-gold-500 transition-colors duration-300"
           >
             sale@pnjewelrymfg.com
+          </a>
+          <a
+            href="https://wa.me/66617898877"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[11px] text-charcoal-600 hover:text-gold-500 transition-colors duration-300"
+          >
+            WhatsApp: +66 61 789 8877
           </a>
         </div>
       </div>
