@@ -69,19 +69,6 @@ const faqs = [
       },
     ],
   },
-  {
-    category: "Branding & Packaging",
-    items: [
-      {
-        q: "Can you add our brand logo to the jewelry?",
-        a: "Yes. We offer laser engraving and stamping of your brand logo, hallmarks, or custom text on the jewelry pieces.",
-      },
-      {
-        q: "Do you offer custom packaging?",
-        a: "Yes. We can arrange custom jewelry boxes, pouches, and tags with your brand logo. MOQ for custom packaging applies separately.",
-      },
-    ],
-  },
 ];
 
 export default function FAQPage() {
