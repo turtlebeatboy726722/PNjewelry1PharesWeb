@@ -1,103 +1,63 @@
 "use client";
 
 import { useState } from "react";
+import { countries } from "@/lib/countries";
 
 type Status = "idle" | "loading" | "success" | "error";
 
 export default function ContactForm() {
   const [form, setForm] = useState({
-    name: "",
-    email: "",
-    whatsapp: "",
-    company: "",
-    product: "",
-    quantity: "",
-    message: "",
+    name: "", email: "", country: "", whatsapp: "",
+    company: "", product: "", quantity: "", message: "",
   });
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  const selectedCountry = countries.find((c) => c.code === form.country);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    if (name === "country") {
+      const country = countries.find((c) => c.code === value);
+      setForm((prev) => ({ ...prev, country: value, whatsapp: country?.dial || "" }));
+    } else {
+      setForm((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
     setErrorMsg("");
-
+    const countryName = selectedCountry?.name || form.country;
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, country: countryName }),
       });
-
       if (res.ok) {
         setStatus("success");
-        setForm({
-          name: "",
-          email: "",
-          whatsapp: "",
-          company: "",
-          product: "",
-          quantity: "",
-          message: "",
-        });
-      } else {
-        throw new Error("API error");
-      }
+        setForm({ name: "", email: "", country: "", whatsapp: "", company: "", product: "", quantity: "", message: "" });
+      } else throw new Error("API error");
     } catch {
-      const subject = encodeURIComponent(
-        `OEM Inquiry from ${form.name} — ${form.company}`
-      );
-      const body = encodeURIComponent(
-        `Name: ${form.name}\nEmail: ${form.email}\nWhatsApp: ${form.whatsapp}\nCompany: ${form.company}\nProduct Interest: ${form.product}\nQuantity: ${form.quantity}\n\nMessage:\n${form.message}`
-      );
-      window.open(
-        `mailto:sale@pnjewelrymfg.com?subject=${subject}&body=${body}`,
-        "_blank"
-      );
+      const subject = encodeURIComponent(`OEM Inquiry from ${form.name} — ${form.company}`);
+      const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\nCountry: ${countryName}\nWhatsApp: ${form.whatsapp}\nCompany: ${form.company}\nProduct: ${form.product}\nQuantity: ${form.quantity}\n\nMessage:\n${form.message}`);
+      window.open(`mailto:sale@pnjewelrymfg.com?subject=${subject}&body=${body}`, "_blank");
       setStatus("error");
-      setErrorMsg(
-        "Our server is unavailable. Your email client has been opened as a fallback."
-      );
+      setErrorMsg("Our server is unavailable. Your email client has been opened as a fallback.");
     }
   };
 
   if (status === "success") {
     return (
-      <div
-        className="border border-charcoal-200 p-12 text-center"
-        style={{
-          minHeight: "400px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <div className="text-4xl mb-6" style={{ color: "var(--gold)" }}>
-          ◇
-        </div>
-        <h3
-          className="font-display text-3xl text-charcoal-900 mb-4"
-          style={{ fontFamily: "var(--font-cormorant)" }}
-        >
-          Message Sent
-        </h3>
+      <div className="border border-charcoal-200 p-12 text-center" style={{ minHeight: "400px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+        <div className="text-4xl mb-6" style={{ color: "var(--gold)" }}>◇</div>
+        <h3 className="font-display text-3xl text-charcoal-900 mb-4" style={{ fontFamily: "var(--font-cormorant)" }}>Message Sent</h3>
         <p className="text-charcoal-500 text-sm mb-8 max-w-xs leading-relaxed">
-          Thank you for your inquiry. Our team will respond within 24–48
-          business hours via email or WhatsApp.
+          Thank you for your inquiry. Our team will respond within 24–48 business hours via email or WhatsApp.
         </p>
-        <button
-          onClick={() => setStatus("idle")}
-          className="btn-gold text-xs px-8 py-3"
-        >
-          Send Another
-        </button>
+        <button onClick={() => setStatus("idle")} className="btn-gold text-xs px-8 py-3">Send Another</button>
       </div>
     );
   }
@@ -109,81 +69,63 @@ export default function ContactForm() {
       {/* Name + Email */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         <div>
-          <label className="block text-[10px] tracking-widest text-charcoal-400 uppercase mb-2">
-            Full Name *
-          </label>
-          <input
-            type="text"
-            name="name"
-            required
-            value={form.name}
-            onChange={handleChange}
-            placeholder="Your name"
-            className="form-input"
-          />
+          <label className="block text-[10px] tracking-widest text-charcoal-400 uppercase mb-2">Full Name *</label>
+          <input type="text" name="name" required value={form.name} onChange={handleChange} placeholder="Your name" className="form-input" />
         </div>
         <div>
-          <label className="block text-[10px] tracking-widest text-charcoal-400 uppercase mb-2">
-            Email Address *
-          </label>
-          <input
-            type="email"
-            name="email"
-            required
-            value={form.email}
-            onChange={handleChange}
-            placeholder="your@email.com"
-            className="form-input"
-          />
+          <label className="block text-[10px] tracking-widest text-charcoal-400 uppercase mb-2">Email Address *</label>
+          <input type="email" name="email" required value={form.email} onChange={handleChange} placeholder="your@email.com" className="form-input" />
         </div>
       </div>
 
-      {/* Company + WhatsApp */}
+      {/* Company + Country */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         <div>
-          <label className="block text-[10px] tracking-widest text-charcoal-400 uppercase mb-2">
-            Company / Brand
-          </label>
-          <input
-            type="text"
-            name="company"
-            value={form.company}
-            onChange={handleChange}
-            placeholder="Your brand name"
-            className="form-input"
-          />
+          <label className="block text-[10px] tracking-widest text-charcoal-400 uppercase mb-2">Company / Brand</label>
+          <input type="text" name="company" value={form.company} onChange={handleChange} placeholder="Your brand name" className="form-input" />
         </div>
         <div>
-          <label className="block text-[10px] tracking-widest text-charcoal-400 uppercase mb-2">
-            WhatsApp Number
-          </label>
+          <label className="block text-[10px] tracking-widest text-charcoal-400 uppercase mb-2">Country</label>
+          <select name="country" value={form.country} onChange={handleChange} className="form-input" style={{ cursor: "pointer" }}>
+            <option value="">Select your country</option>
+            {countries.map((c) => (
+              <option key={c.code} value={c.code}>{c.flag} {c.name} ({c.dial})</option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      {/* WhatsApp */}
+      <div className="mb-8">
+        <label className="block text-[10px] tracking-widest text-charcoal-400 uppercase mb-2">WhatsApp Number</label>
+        <div className="flex gap-0 border-b border-charcoal-200 focus-within:border-gold-400 transition-colors duration-300">
+          {selectedCountry && selectedCountry.code !== "OTHER" && (
+            <span className="flex items-center gap-1 pr-3 text-sm text-charcoal-600 flex-shrink-0 py-3">
+              {selectedCountry.flag} {selectedCountry.dial}
+            </span>
+          )}
           <input
             type="tel"
             name="whatsapp"
             value={form.whatsapp}
             onChange={handleChange}
-            placeholder="+1 234 567 8900"
-            className="form-input"
+            placeholder={selectedCountry ? "Your number" : "+1 234 567 8900"}
+            className="flex-1 bg-transparent py-3 text-sm font-light text-charcoal-900 outline-none"
+            style={{ fontFamily: "var(--font-jost)" }}
           />
-          <p className="text-[10px] text-charcoal-400 mt-1">
-            We'll contact you directly via WhatsApp
-          </p>
         </div>
+        <p className="text-[10px] text-charcoal-400 mt-1">
+          {selectedCountry
+            ? `${selectedCountry.flag} ${selectedCountry.name} — We'll contact you directly via WhatsApp`
+            : "Select your country first to auto-fill country code"}
+        </p>
       </div>
 
       {/* Product + Quantity */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         <div>
-          <label className="block text-[10px] tracking-widest text-charcoal-400 uppercase mb-2">
-            Product Interest
-          </label>
-          <select
-            name="product"
-            value={form.product}
-            onChange={handleChange}
-            className="form-input"
-            style={{ cursor: "pointer" }}
-          >
+          <label className="block text-[10px] tracking-widest text-charcoal-400 uppercase mb-2">Product Interest</label>
+          <select name="product" value={form.product} onChange={handleChange} className="form-input" style={{ cursor: "pointer" }}>
             <option value="">Select category</option>
             <option value="Rings">Rings</option>
             <option value="Necklaces">Necklaces</option>
@@ -194,19 +136,12 @@ export default function ContactForm() {
           </select>
         </div>
         <div>
-          <label className="block text-[10px] tracking-widest text-charcoal-400 uppercase mb-2">
-            Estimated Quantity
-          </label>
-          <select
-            name="quantity"
-            value={form.quantity}
-            onChange={handleChange}
-            className="form-input"
-            style={{ cursor: "pointer" }}
-          >
+          <label className="block text-[10px] tracking-widest text-charcoal-400 uppercase mb-2">Estimated Quantity</label>
+          <select name="quantity" value={form.quantity} onChange={handleChange} className="form-input" style={{ cursor: "pointer" }}>
             <option value="">Select quantity range</option>
-            <option value="50–200 pcs">50–200 pcs (Starter)</option>
-            <option value="200–500 pcs">200–500 pcs</option>
+            <option value="30–100 pcs">30–100 pcs (Starter)</option>
+            <option value="100–300 pcs">100–300 pcs</option>
+            <option value="300–500 pcs">300–500 pcs</option>
             <option value="500–1000 pcs">500–1,000 pcs</option>
             <option value="1000+ pcs">1,000+ pcs</option>
             <option value="Not yet decided">Not yet decided</option>
@@ -216,59 +151,26 @@ export default function ContactForm() {
 
       {/* Message */}
       <div className="mb-10">
-        <label className="block text-[10px] tracking-widest text-charcoal-400 uppercase mb-2">
-          Message *
-        </label>
-        <textarea
-          name="message"
-          required
-          rows={5}
-          value={form.message}
-          onChange={handleChange}
+        <label className="block text-[10px] tracking-widest text-charcoal-400 uppercase mb-2">Message *</label>
+        <textarea name="message" required rows={5} value={form.message} onChange={handleChange}
           placeholder="Describe your project, design references, materials, timeline, or any questions..."
-          className="form-input resize-none"
-          style={{ paddingTop: "8px" }}
-        />
+          className="form-input resize-none" style={{ paddingTop: "8px" }} />
       </div>
 
       {status === "error" && (
-        <div
-          className="mb-6 p-4 text-xs text-charcoal-600 border"
-          style={{
-            borderColor: "var(--gold)",
-            background: "rgba(201,168,76,0.05)",
-          }}
-        >
+        <div className="mb-6 p-4 text-xs text-charcoal-600 border" style={{ borderColor: "var(--gold)", background: "rgba(201,168,76,0.05)" }}>
           {errorMsg}
         </div>
       )}
 
       <div className="flex flex-col sm:flex-row gap-4 items-start">
-        <button
-          type="submit"
-          disabled={status === "loading"}
-          className="btn-gold-filled text-xs px-12 py-4 disabled:opacity-50 disabled:cursor-not-allowed"
-        >
+        <button type="submit" disabled={status === "loading"} className="btn-gold-filled text-xs px-12 py-4 disabled:opacity-50 disabled:cursor-not-allowed">
           {status === "loading" ? "Sending..." : "Send Inquiry"}
         </button>
         <div className="flex flex-col gap-1">
-          <p className="text-[10px] text-charcoal-400 tracking-widest">
-            Or contact us directly:
-          </p>
-          <a
-            href="mailto:sale@pnjewelrymfg.com"
-            className="text-[11px] text-charcoal-600 hover:text-gold-500 transition-colors duration-300"
-          >
-            sale@pnjewelrymfg.com
-          </a>
-          <a
-            href="https://wa.me/66617898877"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[11px] text-charcoal-600 hover:text-gold-500 transition-colors duration-300"
-          >
-            WhatsApp: +66 61 789 8877
-          </a>
+          <p className="text-[10px] text-charcoal-400 tracking-widest">Or contact us directly:</p>
+          <a href="mailto:sale@pnjewelrymfg.com" className="text-[11px] text-charcoal-600 hover:text-gold-500 transition-colors duration-300">sale@pnjewelrymfg.com</a>
+          <a href="https://wa.me/66617898877" target="_blank" rel="noopener noreferrer" className="text-[11px] text-charcoal-600 hover:text-gold-500 transition-colors duration-300">WhatsApp: +66 61 789 8877</a>
         </div>
       </div>
     </form>
