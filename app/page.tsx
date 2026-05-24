@@ -7,7 +7,7 @@ import VideoSection from "@/components/VideoSection";
 export const metadata: Metadata = {
   title: "P&N Jewelry | OEM Jewelry Manufacturer Thailand — 40+ Years",
   description:
-    "Thailand's premier OEM jewelry manufacturer with 40+ years of experience. Serving global brands in USA, UK, Japan, Canada, Australia, Germany, Russia and beyond. Low MOQ 30 pcs. Request your free quote today.",
+    "P&N Jewelry — Thailand's leading OEM jewelry manufacturer in Bangkok with 40+ years experience. Custom silver and gold jewelry for brands in Japan, Canada, Australia, Germany & USA. Low MOQ 30 pcs.",
 };
 
 const stats = [
@@ -39,10 +39,10 @@ const factoryPreviews = [
 ];
 
 const whyUs = [
-  { icon: "◈", title: "40+ Years Expertise", desc: "Decades of OEM manufacturing experience for international jewelry brands." },
-  { icon: "◇", title: "Low MOQ — 30 Pcs", desc: "Start small, scale fast. Ideal for boutique brands and new collections." },
-  { icon: "◉", title: "Full-Service Production", desc: "Design to delivery under one roof. No outsourcing. Complete control." },
-  { icon: "◎", title: "Global Brand Partners", desc: "Trusted by established brands in the USA, UK, Japan, Canada, Australia, Germany, Russia, and across Europe." },
+  { icon: "◈", title: "40+ Years Expertise", desc: "Decades of OEM manufacturing experience for international jewelry brands in the USA, Japan, Canada, Australia, and Europe." },
+  { icon: "◇", title: "Low MOQ — 30 Pcs", desc: "Start small, scale fast. Our Bangkok jewelry factory accepts orders from just 30 pieces per design." },
+  { icon: "◉", title: "Full-Service Production", desc: "Design to delivery under one roof. No outsourcing. Complete control over every stage of production." },
+  { icon: "◎", title: "Global Brand Partners", desc: "Trusted OEM jewelry manufacturer for established brands in the USA, Spain, Germany, Japan, and beyond." },
 ];
 
 export default function HomePage() {
@@ -51,20 +51,20 @@ export default function HomePage() {
       {/* ─── HERO ─── */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ background: "var(--ink)" }}>
         <div className="absolute inset-0">
-          <SafeImage src="/images/hero/hero-bg.jpg" alt="P&N Jewelry Manufacturing" fill className="object-cover opacity-30" />
+          <SafeImage src="/images/hero/hero-bg.jpg" alt="P&N Jewelry OEM Manufacturing Factory Bangkok Thailand" fill className="object-cover opacity-30" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(13,13,13,0.6) 0%, rgba(13,13,13,0.8) 100%)" }} />
         </div>
         <div className="absolute left-1/2 top-0 -translate-x-1/2 w-px h-32 opacity-30" style={{ background: "var(--gold)" }} />
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
           <p className="section-label mb-8 animate-fade-in" style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}>
-            Thailand OEM Jewelry Manufacturer
+            OEM Jewelry Manufacturer — Bangkok, Thailand
           </p>
           <h1 className="text-white font-display font-light mb-6" style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2.8rem, 8vw, 7rem)", lineHeight: 1.05 }}>
             <span className="block animate-fade-up" style={{ animationDelay: "0.3s", opacity: 0, animationFillMode: "forwards" }}>Crafted with</span>
             <span className="block gold-text animate-fade-up italic" style={{ animationDelay: "0.5s", opacity: 0, animationFillMode: "forwards" }}>40 Years of Mastery</span>
           </h1>
           <p className="text-charcoal-300 text-sm tracking-widest mb-12 animate-fade-up" style={{ animationDelay: "0.7s", opacity: 0, animationFillMode: "forwards" }}>
-            OEM · Private Label · Full-Service Production · Bangkok, Thailand
+            Custom OEM & Private Label Jewelry · Silver 925 & Gold · Bangkok, Thailand
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up" style={{ animationDelay: "0.9s", opacity: 0, animationFillMode: "forwards" }}>
             <Link href="/contact" className="btn-gold-filled text-xs px-10 py-4">Request Quotation</Link>
@@ -100,13 +100,20 @@ export default function HomePage() {
             <RevealOnScroll>
               <p className="section-label mb-4">About P&N Jewelry</p>
               <h2 className="font-display font-light mb-6 text-charcoal-900" style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.1 }}>
-                A Legacy Built on <span className="italic gold-text">Precision</span>
+                Thailand&apos;s Trusted{" "}
+                <span className="italic gold-text">OEM Jewelry Manufacturer</span>
               </h2>
               <p className="text-charcoal-500 text-sm leading-relaxed mb-4">
-                Founded in Thailand and refined over four decades, P&N Jewelry Limited Partnership has grown into a trusted <strong>OEM jewelry manufacturer</strong> for brands worldwide — including clients in the <strong>USA, UK, Japan, Canada, Australia, Germany, and Russia</strong>.
+                P&N Jewelry Limited Partnership is a leading OEM jewelry manufacturer
+                in Bangkok, Thailand, with over 40 years of experience. We are a
+                trusted manufacturing partner for jewelry brands worldwide — including
+                brands from the USA, Japan, Canada, Australia, Germany, and Spain.
               </p>
               <p className="text-charcoal-500 text-sm leading-relaxed mb-8">
-                From initial design consultation to final quality inspection, every piece reflects our uncompromising commitment to excellence. <strong>Low MOQ from 30 pieces per design.</strong>
+                As a full-service jewelry factory in Bangkok, we handle everything
+                in-house: custom design, silver and gold casting, hand polishing,
+                stone setting, and plating. Our low MOQ of just 30 pieces per design
+                makes professional OEM manufacturing accessible to brands of all sizes.
               </p>
               <Link href="/about" className="btn-gold text-xs">Our Full Story</Link>
             </RevealOnScroll>
@@ -114,7 +121,7 @@ export default function HomePage() {
               <div className="relative aspect-square max-w-lg mx-auto">
                 <div className="absolute -top-4 -left-4 w-full h-full border" style={{ borderColor: "var(--gold)", opacity: 0.3 }} />
                 <div className="relative w-full h-full overflow-hidden">
-                  <SafeImage src="/images/factory/production/production-2.jpg" alt="P&N Jewelry Workshop" fill className="object-cover" />
+                  <SafeImage src="/images/factory/production/production-2.jpg" alt="P&N Jewelry OEM Factory Bangkok Thailand" fill className="object-cover" />
                 </div>
               </div>
             </RevealOnScroll>
@@ -127,7 +134,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <RevealOnScroll>
             <div className="text-center mb-16">
-              <p className="section-label mb-4">Our Process</p>
+              <p className="section-label mb-4">Our OEM Manufacturing Process</p>
               <h2 className="font-display font-light text-white" style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
                 From Concept to <span className="italic gold-text">Creation</span>
               </h2>
@@ -157,7 +164,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <RevealOnScroll>
             <div className="text-center mb-16">
-              <p className="section-label mb-4">Collections</p>
+              <p className="section-label mb-4">Custom OEM Collections</p>
               <h2 className="font-display font-light text-charcoal-900" style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
                 Product <span className="italic gold-text">Categories</span>
               </h2>
@@ -169,7 +176,7 @@ export default function HomePage() {
                 <Link href={cat.href} className="block product-card group">
                   <div className="relative overflow-hidden" style={{ paddingBottom: "130%" }}>
                     <div className="absolute inset-0">
-                      <SafeImage src={cat.img} alt={cat.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                      <SafeImage src={cat.img} alt={`Custom OEM ${cat.title} Manufacturer Thailand`} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
                       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%)" }} />
                     </div>
                     <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-400">
@@ -194,12 +201,14 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <RevealOnScroll>
             <div className="text-center mb-16">
-              <p className="section-label mb-4">Inside Our Factory</p>
+              <p className="section-label mb-4">Inside Our Bangkok Jewelry Factory</p>
               <h2 className="font-display font-light text-charcoal-900" style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
                 Where <span className="italic gold-text">Precision</span> Meets Craft
               </h2>
               <p className="text-charcoal-400 text-sm mt-4 max-w-xl mx-auto leading-relaxed">
-                Our Bangkok facility houses every stage of production — all under one roof.
+                Our Bangkok jewelry factory houses every stage of OEM production —
+                from wax injection and silver casting to stone setting and final
+                quality control — all under one roof.
               </p>
             </div>
           </RevealOnScroll>
@@ -208,7 +217,7 @@ export default function HomePage() {
               <RevealOnScroll key={f.title} delay={i * 100}>
                 <div className="group overflow-hidden">
                   <div className="relative overflow-hidden" style={{ aspectRatio: "4/3" }}>
-                    <SafeImage src={f.img} alt={f.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <SafeImage src={f.img} alt={`${f.title} — P&N Jewelry Factory Bangkok`} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
                   </div>
                   <div className="pt-5 pb-2 border-b border-charcoal-200">
                     <h3 className="font-display text-xl text-charcoal-900 mb-1" style={{ fontFamily: "var(--font-cormorant)" }}>{f.title}</h3>
@@ -229,10 +238,10 @@ export default function HomePage() {
       {/* ─── VIDEO ─── */}
       <VideoSection
         youtubeId="NYG46nwFnto"
-        label="P&N Jewelry"
+        label="P&N Jewelry — Bangkok, Thailand"
         title="See Our"
         subtitle="Craftsmanship in Action"
-        description="A glimpse into our Bangkok facility — where every piece is crafted with precision and care."
+        description="A glimpse inside our Bangkok OEM jewelry factory — where every piece is crafted with precision by our skilled Thai artisans."
         dark={true}
       />
 
@@ -241,9 +250,9 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <RevealOnScroll>
             <div className="text-center mb-16">
-              <p className="section-label mb-4">Why P&N Jewelry</p>
+              <p className="section-label mb-4">Why Choose P&N Jewelry</p>
               <h2 className="font-display font-light text-charcoal-900" style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
-                The Partner Brands <span className="italic gold-text">Trust</span>
+                The OEM Manufacturer <span className="italic gold-text">Brands Trust</span>
               </h2>
             </div>
           </RevealOnScroll>
@@ -266,54 +275,103 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── BLOG PREVIEW ─── */}
-      <section className="py-28" style={{ background: "var(--ink)" }}>
+      {/* ─── MARKETS ─── */}
+      <section className="py-16 border-t border-charcoal-100" style={{ background: "var(--cream)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <RevealOnScroll>
-            <div className="text-center mb-16">
-              <p className="section-label mb-4">Manufacturing Insights</p>
-              <h2 className="font-display font-light text-white" style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
-                OEM Jewelry <span className="italic gold-text">Knowledge Base</span>
-              </h2>
-              <p className="text-charcoal-400 text-sm mt-4 max-w-xl mx-auto leading-relaxed">
-                Practical guides for jewelry brands on OEM manufacturing, low MOQ production, and private label sourcing in Thailand.
+            <div className="text-center mb-10">
+              <p className="section-label mb-3">Serving Brands Worldwide</p>
+              <p className="text-charcoal-500 text-sm max-w-2xl mx-auto leading-relaxed">
+                As a trusted OEM jewelry manufacturer in Thailand, we work with jewelry brands
+                across the USA, Japan, Canada, Australia, Germany, Spain, and beyond.
+                Our Bangkok factory ships worldwide with full export documentation.
               </p>
             </div>
-          </RevealOnScroll>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { slug: "oem-jewelry-manufacturer-thailand", tag: "Sourcing Guide", title: "How to Find the Right OEM Jewelry Manufacturer in Thailand", desc: "What to look for, red flags to avoid, and why Bangkok factories deliver better quality." },
-              { slug: "low-moq-jewelry-manufacturer", tag: "MOQ & Pricing", title: "Low MOQ Jewelry Manufacturing: How Small Brands Can Start", desc: "Starting a jewelry brand? MOQ as low as 30 pieces without quality compromise." },
-              { slug: "thailand-vs-china-jewelry-manufacturing", tag: "Comparison", title: "Thailand vs China for Jewelry Manufacturing: An Honest Comparison", desc: "Quality, MOQ, price, communication — which country is right for your brand?" },
-            ].map((post, i) => (
-              <RevealOnScroll key={post.slug} delay={i * 100}>
-                <Link href={`/blog/${post.slug}`} className="block group border border-charcoal-800 p-8 hover:border-gold-400 transition-all duration-400">
-                  <span className="text-[10px] tracking-widest uppercase mb-4 block" style={{ color: "var(--gold)" }}>{post.tag}</span>
-                  <h3 className="font-display font-light text-white text-xl mb-3 leading-snug group-hover:text-gold-300 transition-colors duration-300" style={{ fontFamily: "var(--font-cormorant)" }}>{post.title}</h3>
-                  <p className="text-charcoal-400 text-xs leading-relaxed mb-6">{post.desc}</p>
-                  <span className="text-[10px] tracking-widest uppercase border-b pb-px" style={{ color: "var(--gold)", borderColor: "var(--gold)" }}>Read Article →</span>
-                </Link>
-              </RevealOnScroll>
-            ))}
-          </div>
-          <RevealOnScroll delay={350}>
-            <div className="text-center mt-12">
-              <Link href="/blog" className="btn-gold text-xs">View All Articles</Link>
+            <div className="flex flex-wrap justify-center gap-6 text-charcoal-400 text-sm">
+              {["🇺🇸 USA", "🇯🇵 Japan", "🇨🇦 Canada", "🇦🇺 Australia", "🇩🇪 Germany", "🇪🇸 Spain", "🇬🇧 UK", "🇫🇷 France", "🌍 Worldwide"].map((country) => (
+                <span key={country} className="flex items-center gap-1 text-xs tracking-widest">{country}</span>
+              ))}
             </div>
           </RevealOnScroll>
         </div>
       </section>
 
+      {/* ─── SEO KEYWORDS ─── */}
+      <section className="py-20" style={{ background: "var(--warm-white)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <RevealOnScroll>
+            <div className="text-center mb-14">
+              <p className="section-label mb-4">Our Manufacturing Specializations</p>
+              <h2
+                className="font-display font-light text-charcoal-900"
+                style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(1.8rem, 3.5vw, 3rem)" }}
+              >
+                Complete <span className="italic gold-text">Custom Jewelry Manufacturing</span> in Thailand
+              </h2>
+              <p className="text-charcoal-500 text-sm mt-4 max-w-2xl mx-auto leading-relaxed">
+                P&N Jewelry is Thailand&apos;s trusted silver jewelry manufacturer and gold vermeil jewelry
+                manufacturer — offering full custom jewelry manufacturing and private label jewelry
+                manufacturing services from our Bangkok factory.
+              </p>
+            </div>
+          </RevealOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: "◈",
+                title: "Silver Jewelry Manufacturer Thailand",
+                desc: "Sterling silver 925 jewelry manufacturing for global brands. Rings, necklaces, bracelets, and earrings cast and finished in Bangkok.",
+              },
+              {
+                icon: "◇",
+                title: "Gold Vermeil Jewelry Manufacturer",
+                desc: "Premium gold vermeil manufacturing — thick 18k gold plating over silver 925. Ideal for luxury private label jewelry brands worldwide.",
+              },
+              {
+                icon: "◉",
+                title: "Jewelry Casting & Plating Services",
+                desc: "Professional jewelry casting services, stone setting services, and jewelry plating services — all under one roof in our Bangkok factory.",
+              },
+              {
+                icon: "◎",
+                title: "Prototype & Low MOQ Manufacturing",
+                desc: "Jewelry prototype and sampling before full production. Low MOQ jewelry manufacturing from 30 pieces — ideal for new collections and boutique brands.",
+              },
+            ].map((item, i) => (
+              <RevealOnScroll key={item.title} delay={i * 80}>
+                <div className="border border-charcoal-100 p-7 hover:border-gold-300 transition-all duration-400 group">
+                  <div
+                    className="text-2xl mb-4 group-hover:scale-110 transition-transform duration-300 inline-block"
+                    style={{ color: "var(--gold)" }}
+                  >
+                    {item.icon}
+                  </div>
+                  <h3
+                    className="font-display text-lg text-charcoal-900 mb-2"
+                    style={{ fontFamily: "var(--font-cormorant)" }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p className="text-charcoal-400 text-xs leading-relaxed">{item.desc}</p>
+                </div>
+              </RevealOnScroll>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─── CONTACT CTA ─── */}
-      <section className="py-32 relative overflow-hidden" style={{ background: "var(--cream)" }}>
+      <section className="py-32 relative overflow-hidden" style={{ background: "var(--ink)" }}>
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <RevealOnScroll>
             <p className="section-label mb-6">Get in Touch</p>
-            <h2 className="font-display font-light text-charcoal-900 mb-6" style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2.2rem, 5vw, 4rem)", lineHeight: 1.1 }}>
-              Ready to Create Your <span className="italic gold-text">Next Collection?</span>
+            <h2 className="font-display font-light text-white mb-6" style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2.2rem, 5vw, 4rem)", lineHeight: 1.1 }}>
+              Ready to Start Your{" "}
+              <span className="italic gold-text">OEM Jewelry Project?</span>
             </h2>
-            <p className="text-charcoal-500 text-sm leading-relaxed mb-10 max-w-md mx-auto">
-              Contact our team for a free consultation and quote. We work with brands of all sizes — from the USA and UK to Japan, Russia, and beyond. <strong>MOQ from 30 pieces.</strong>
+            <p className="text-charcoal-400 text-sm leading-relaxed mb-10 max-w-md mx-auto">
+              Contact our Bangkok team for a free consultation and quote.
+              Low MOQ 30 pieces. We respond within 24 hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="btn-gold-filled text-xs px-12 py-4">Request a Free Quote</Link>

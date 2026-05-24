@@ -5,9 +5,9 @@ import RevealOnScroll from "@/components/RevealOnScroll";
 import SafeImage from "@/components/SafeImage";
 
 export const metadata: Metadata = {
-  title: "Why Choose P&N Jewelry — 40 Years OEM Manufacturing",
+  title: "Why Choose P&N Jewelry — Thailand OEM Jewelry Manufacturer | 40 Years",
   description:
-    "Discover why global brands choose P&N Jewelry: 40+ years experience, low MOQ 30 pcs, full-service OEM, and trusted by USA & Spain brands.",
+    "Discover why global brands choose P&N Jewelry: 40+ years experience as a silver jewelry manufacturer Thailand, gold vermeil jewelry manufacturer, and private label jewelry manufacturer. Low MOQ 30 pcs.",
 };
 
 const advantages = [
@@ -130,7 +130,7 @@ export default function WhyUsPage() {
               { num: "40+", label: "Years in Business" },
               { num: "30", label: "Minimum Order Qty" },
               { num: "100%", label: "In-house Production" },
-              { num: "2", label: "International Markets" },
+              { num: "Global", label: "Worldwide Shipping" },
             ].map((s, i) => (
               <RevealOnScroll key={s.label} delay={i * 100}>
                 <div>
@@ -225,6 +225,58 @@ export default function WhyUsPage() {
           ))}
         </div>
       </section>
+
+      {/* ─── SEO KEYWORDS ─── */}
+      <section className="py-16 border-t border-charcoal-100" style={{ background: "var(--cream)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <RevealOnScroll>
+            <div className="text-center mb-12">
+              <p className="section-label mb-4">Our Specializations</p>
+              <h2
+                className="font-display font-light text-charcoal-900"
+                style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(1.8rem, 3vw, 2.8rem)" }}
+              >
+                Thailand&apos;s Trusted <span className="italic gold-text">OEM Jewelry Manufacturer</span>
+              </h2>
+              <p className="text-charcoal-500 text-sm mt-4 max-w-2xl mx-auto leading-relaxed">
+                P&N Jewelry is a leading silver jewelry manufacturer in Thailand and gold vermeil jewelry manufacturer
+                for private label and custom jewelry manufacturing clients worldwide. Based in Bangkok, we serve
+                brands in the USA, Japan, Canada, Australia, Germany, Spain, and beyond.
+              </p>
+            </div>
+          </RevealOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Silver Jewelry Manufacturer Thailand",
+                desc: "Specializing in sterling silver 925 jewelry manufacturing for global brands. Rings, necklaces, bracelets, and earrings cast, polished, and finished in our Bangkok factory.",
+              },
+              {
+                title: "Gold Vermeil Jewelry Manufacturer",
+                desc: "Premium gold vermeil jewelry manufacturing — thick 18k gold plating over sterling silver 925. The preferred choice for private label jewelry brands seeking luxury quality.",
+              },
+              {
+                title: "Private Label Jewelry Manufacturer",
+                desc: "Complete private label jewelry manufacturing service. We produce your designs under your brand — from custom packaging to hallmarking — with low MOQ from 30 pieces.",
+              },
+            ].map((item, i) => (
+              <RevealOnScroll key={item.title} delay={i * 100}>
+                <div className="p-8 border border-charcoal-200 hover:border-gold-300 transition-all duration-400">
+                  <div className="w-8 h-px mb-6" style={{ background: "var(--gold)" }} />
+                  <h3
+                    className="font-display text-xl text-charcoal-900 mb-3"
+                    style={{ fontFamily: "var(--font-cormorant)" }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p className="text-charcoal-400 text-xs leading-relaxed">{item.desc}</p>
+                </div>
+              </RevealOnScroll>
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       {/* CTA */}
       <section className="py-28 text-center" style={{ background: "var(--ink)" }}>
