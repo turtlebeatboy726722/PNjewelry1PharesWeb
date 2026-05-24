@@ -224,7 +224,7 @@ export default function AboutPage() {
 
       {/* ─── VIDEO ─── */}
       <VideoSection
-        videoId="cozkxxdlhto"
+        youtubeId="cozkxxdlhto"
         title="Inside Our Bangkok Jewelry Factory"
         subtitle="A full tour of our OEM manufacturing facility — the same process trusted by jewelry brands in the USA, UK, Japan, Canada, Australia, Germany, and Russia for over 40 years."
       />

@@ -235,7 +235,7 @@ export default function HomePage() {
 
       {/* ─── VIDEO SECTION ─── */}
       <VideoSection
-        videoId="NYG46nwFnto"
+        youtubeId="NYG46nwFnto"
         title="Watch Our Manufacturing Process"
         subtitle="See how we craft precision OEM jewelry in our Bangkok factory — from design to finished piece."
       />
