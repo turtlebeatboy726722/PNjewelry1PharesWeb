@@ -1,289 +1,305 @@
-import type { Metadata } from "next";
 import Link from "next/link";
-import RevealOnScroll from "@/components/RevealOnScroll";
 import SafeImage from "@/components/SafeImage";
+import RevealOnScroll from "@/components/RevealOnScroll";
 import VideoSection from "@/components/VideoSection";
 
-export const metadata: Metadata = {
-  title: "P&N Jewelry | OEM Jewelry Manufacturer Thailand — 40+ Years",
-  description:
-    "Thailand's premier OEM jewelry manufacturer with 40+ years of experience. Serving global brands in USA, Spain and beyond. Low MOQ 30 pcs. Request your free quote today.",
-};
-
-const stats = [
-  { value: "40+", label: "Years Experience" },
-  { value: "30", label: "Min. Order Qty" },
-  { value: "100%", label: "OEM Service" },
-  { value: "Global", label: "Worldwide Shipping" },
-];
-
-const services = [
-  { step: "01", title: "Design & CAD", desc: "From concept sketch to precise 3D CAD rendering. We bring your design vision to life with accuracy." },
-  { step: "02", title: "Casting", desc: "Lost-wax casting with precision alloy control. Silver, gold, and base metals to your specification." },
-  { step: "03", title: "Polishing", desc: "Mirror-finish or matte. Hand-polished by skilled craftsmen for flawless surface quality." },
-  { step: "04", title: "Stone Setting", desc: "Prong, bezel, pavé, channel setting. Diamonds, gemstones, CZ — expertly secured." },
-  { step: "05", title: "Plating", desc: "18k gold, rose gold, rhodium, black rhodium. Durable plating for lasting brilliance." },
-];
-
 const categories = [
-  { title: "Rings", href: "/products/rings", img: "/images/products/rings/ring-1.jpg", desc: "Statement bands, stackable, solitaire" },
-  { title: "Necklaces", href: "/products/necklaces", img: "/images/products/necklaces/necklace-1.jpg", desc: "Pendants, chains, layering pieces" },
-  { title: "Bracelets", href: "/products/bracelets", img: "/images/products/bracelets/bracelet-1.jpg", desc: "Bangles, cuffs, charm bracelets" },
-  { title: "Earrings", href: "/products/earrings", img: "/images/products/earrings/earring-1.jpg", desc: "Studs, hoops, drops, chandeliers" },
+  { name: "Rings", slug: "rings", img: "/images/products/rings/ring-1.jpg", desc: "Custom OEM rings in silver & gold" },
+  { name: "Necklaces", slug: "necklaces", img: "/images/products/necklaces/necklace-1.jpg", desc: "Precision-crafted necklaces & pendants" },
+  { name: "Bracelets", slug: "bracelets", img: "/images/products/bracelets/bracelet-1.jpg", desc: "Fine bracelets for global brands" },
+  { name: "Earrings", slug: "earrings", img: "/images/products/earrings/earring-1.jpg", desc: "Statement earrings, every style" },
 ];
 
-const factoryPreviews = [
-  { img: "/images/factory/production/production-1.jpg", title: "Production Floor", desc: "State-of-the-art casting & assembly" },
-  { img: "/images/factory/polishing/polishing-1.jpg", title: "Polishing Workshop", desc: "Hand-finished to perfection" },
-  { img: "/images/factory/setting/setting-1.jpg", title: "Stone Setting", desc: "Master setters with decades of skill" },
+const factoryItems = [
+  {
+    title: "Factory Production",
+    desc: "Our Bangkok jewelry factory operates 6 days a week, running lost-wax casting, assembly, and quality control entirely in-house — no subcontracting.",
+    images: [
+      "/images/factory/production/production-1.jpg",
+      "/images/factory/production/production-2.jpg",
+      "/images/factory/production/production-3.jpg",
+    ],
+  },
+  {
+    title: "Polishing Process",
+    desc: "Every piece undergoes multi-stage hand polishing by our skilled artisans, achieving mirror-finish results that meet the standards of leading jewelry brands worldwide.",
+    images: [
+      "/images/factory/polishing/polishing-1.jpg",
+      "/images/factory/polishing/polishing-2.jpg",
+      "/images/factory/polishing/polishing-3.jpg",
+    ],
+  },
+  {
+    title: "Stone Setting",
+    desc: "We specialize in prong, bezel, pavé, and channel settings using CZ, diamonds, and natural gemstones — trusted by OEM clients from the USA, UK, Japan, Russia, and Europe.",
+    images: [
+      "/images/factory/setting/setting-1.jpg",
+      "/images/factory/setting/setting-2.jpg",
+      "/images/factory/setting/setting-3.jpg",
+    ],
+  },
 ];
 
-const whyUs = [
-  { icon: "◈", title: "40+ Years Expertise", desc: "Decades of OEM manufacturing experience for international jewelry brands." },
-  { icon: "◇", title: "Low MOQ — 30 Pcs", desc: "Start small, scale fast. Ideal for boutique brands and new collections." },
-  { icon: "◉", title: "Full-Service Production", desc: "Design to delivery under one roof. No outsourcing. Complete control." },
-  { icon: "◎", title: "Global Brand Partners", desc: "Trusted by established brands in the USA, Spain, and across Europe." },
+const reasons = [
+  { icon: "◈", title: "40+ Years Experience", desc: "Decades of OEM jewelry manufacturing expertise serving global brands from Thailand." },
+  { icon: "◇", title: "Low MOQ 30 Pieces", desc: "One of the lowest minimums in Thailand — ideal for startups and boutique jewelry brands." },
+  { icon: "◉", title: "Full-Service Under One Roof", desc: "Design, casting, polishing, stone setting, and plating — all in our Bangkok factory." },
+  { icon: "◈", title: "Global Brand Trusted", desc: "Proven track record with brands in the USA, UK, Japan, Canada, Australia, Germany, Russia, and across Europe." },
 ];
 
 export default function HomePage() {
   return (
-    <>
+    <main>
       {/* ─── HERO ─── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ background: "var(--ink)" }}>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
         <div className="absolute inset-0">
-          <SafeImage src="/images/hero/hero-bg.jpg" alt="P&N Jewelry Manufacturing" fill className="object-cover opacity-30" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(13,13,13,0.6) 0%, rgba(13,13,13,0.8) 100%)" }} />
+          <SafeImage
+            src="/images/hero/hero-bg.jpg"
+            alt="P&N Jewelry OEM manufacturing factory Bangkok Thailand"
+            className="w-full h-full object-cover opacity-50"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
         </div>
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-px h-32 opacity-30" style={{ background: "var(--gold)" }} />
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-          <p className="section-label mb-8 animate-fade-in" style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}>
-            Thailand OEM Jewelry Manufacturer
-          </p>
-          <h1 className="text-white font-display font-light mb-6" style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2.8rem, 8vw, 7rem)", lineHeight: 1.05 }}>
-            <span className="block animate-fade-up" style={{ animationDelay: "0.3s", opacity: 0, animationFillMode: "forwards" }}>Crafted with</span>
-            <span className="block gold-text animate-fade-up italic" style={{ animationDelay: "0.5s", opacity: 0, animationFillMode: "forwards" }}>40 Years of Mastery</span>
-          </h1>
-          <p className="text-charcoal-300 text-sm tracking-widest mb-12 animate-fade-up" style={{ animationDelay: "0.7s", opacity: 0, animationFillMode: "forwards" }}>
-            OEM · Private Label · Full-Service Production · Bangkok, Thailand
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up" style={{ animationDelay: "0.9s", opacity: 0, animationFillMode: "forwards" }}>
-            <Link href="/contact" className="btn-gold-filled text-xs px-10 py-4">Request Quotation</Link>
-            <Link href="/about" className="btn-gold text-xs px-10 py-4">Our Story</Link>
-          </div>
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+          <RevealOnScroll>
+            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-6 font-light">
+              Bangkok, Thailand · Since 1984
+            </p>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light text-white mb-6 leading-tight tracking-wide">
+              OEM Jewelry Manufacturer
+              <span className="block text-gold italic mt-2">in Thailand</span>
+            </h1>
+            <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+              40+ Years Experience · Trusted by Global Brands · Low MOQ 30 Pieces
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="btn-primary">
+                Request Quotation
+              </Link>
+              <Link href="/products" className="btn-secondary">
+                View Products
+              </Link>
+            </div>
+          </RevealOnScroll>
         </div>
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
-          <span className="text-[10px] tracking-widest text-gold-400 uppercase">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-gold-400 to-transparent" />
-        </div>
-      </section>
-
-      {/* ─── STATS ─── */}
-      <section className="py-16 border-b border-charcoal-100" style={{ background: "var(--warm-white)" }}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((s, i) => (
-              <RevealOnScroll key={s.label} delay={i * 100}>
-                <div className="text-center">
-                  <div className="font-display font-light mb-1" style={{ fontFamily: "var(--font-cormorant)", fontSize: "3rem", color: "var(--gold)" }}>{s.value}</div>
-                  <div className="text-[10px] tracking-widest text-charcoal-500 uppercase">{s.label}</div>
-                </div>
-              </RevealOnScroll>
-            ))}
-          </div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40 animate-bounce">
+          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+            <path d="M19 9l-7 7-7-7" />
+          </svg>
         </div>
       </section>
 
       {/* ─── ABOUT PREVIEW ─── */}
-      <section className="py-28" style={{ background: "var(--cream)" }}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <RevealOnScroll>
-              <p className="section-label mb-4">About P&N Jewelry</p>
-              <h2 className="font-display font-light mb-6 text-charcoal-900" style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.1 }}>
-                A Legacy Built on <span className="italic gold-text">Precision</span>
-              </h2>
-              <p className="text-charcoal-500 text-sm leading-relaxed mb-4">
-                Founded in Thailand and refined over four decades, P&N Jewelry Limited Partnership has grown into a trusted OEM manufacturing partner for jewelry brands worldwide.
-              </p>
-              <p className="text-charcoal-500 text-sm leading-relaxed mb-8">
-                From initial design consultation to final quality inspection, every piece reflects our uncompromising commitment to excellence.
-              </p>
-              <Link href="/about" className="btn-gold text-xs">Our Full Story</Link>
-            </RevealOnScroll>
-            <RevealOnScroll delay={200}>
-              <div className="relative aspect-square max-w-lg mx-auto">
-                <div className="absolute -top-4 -left-4 w-full h-full border" style={{ borderColor: "var(--gold)", opacity: 0.3 }} />
-                <div className="relative w-full h-full overflow-hidden">
-                  <SafeImage src="/images/factory/production/production-2.jpg" alt="P&N Jewelry Workshop" fill className="object-cover" />
-                </div>
+      <section className="section-padding bg-white">
+        <div className="container-luxury">
+          <RevealOnScroll>
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div>
+                <p className="text-gold text-xs tracking-[0.3em] uppercase mb-4">About Us</p>
+                <h2 className="text-3xl md:text-4xl font-light text-black mb-6 leading-tight">
+                  Thailand's Trusted OEM Jewelry Manufacturing Partner
+                </h2>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  P&amp;N Jewelry Limited Partnership is a leading <strong>OEM jewelry manufacturer in Thailand</strong> with over 40 years of experience crafting precision jewelry for global brands.
+                </p>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Based in Bangkok, our full-service <strong>jewelry factory</strong> handles everything in-house — from design and lost-wax casting to hand polishing, stone setting, and plating. We serve brands in the <strong>USA, UK, Japan, Canada, Australia, Germany, Russia</strong>, and across Europe.
+                </p>
+                <p className="text-gray-600 leading-relaxed mb-8">
+                  With a <strong>low MOQ starting from just 30 pieces</strong> per design, we are the ideal manufacturing partner for boutique labels, established brands, and startups alike.
+                </p>
+                <Link href="/about" className="btn-outline">
+                  Our Story
+                </Link>
               </div>
-            </RevealOnScroll>
-          </div>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { num: "40+", label: "Years Experience" },
+                  { num: "30", label: "Pieces Min. Order" },
+                  { num: "100%", label: "In-House Production" },
+                  { num: "USA & EU", label: "Brand Clients" },
+                ].map((s) => (
+                  <div key={s.label} className="border border-gold/30 p-6 text-center">
+                    <div className="text-3xl font-light text-gold mb-2">{s.num}</div>
+                    <div className="text-xs tracking-widest uppercase text-gray-500">{s.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </RevealOnScroll>
         </div>
       </section>
 
       {/* ─── SERVICES PREVIEW ─── */}
-      <section className="py-28" style={{ background: "var(--ink)" }}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="section-padding bg-black">
+        <div className="container-luxury">
           <RevealOnScroll>
             <div className="text-center mb-16">
-              <p className="section-label mb-4">Our Process</p>
-              <h2 className="font-display font-light text-white" style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
-                From Concept to <span className="italic gold-text">Creation</span>
+              <p className="text-gold text-xs tracking-[0.3em] uppercase mb-4">Our Services</p>
+              <h2 className="text-3xl md:text-4xl font-light text-white mb-4">
+                Full-Service OEM Jewelry Production
               </h2>
+              <p className="text-white/50 max-w-2xl mx-auto">
+                As a <strong className="text-white/70">custom jewelry manufacturer in Bangkok</strong>, we offer end-to-end production — from your first design sketch to finished, export-ready pieces.
+              </p>
             </div>
           </RevealOnScroll>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-0">
-            {services.map((s, i) => (
-              <RevealOnScroll key={s.step} delay={i * 80}>
-                <div className="border-l border-charcoal-800 px-6 py-8 hover:border-gold-400 transition-colors duration-400 group" style={{ borderColor: i === 0 ? "var(--gold)" : undefined }}>
-                  <div className="text-[11px] font-mono mb-4" style={{ color: "var(--gold)", opacity: 0.6 }}>{s.step}</div>
-                  <h3 className="text-white font-display font-light mb-3 text-xl" style={{ fontFamily: "var(--font-cormorant)" }}>{s.title}</h3>
-                  <p className="text-charcoal-400 text-xs leading-relaxed">{s.desc}</p>
+          <div className="grid md:grid-cols-5 gap-px bg-white/10">
+            {["Design & CAD", "Lost-Wax Casting", "Hand Polishing", "Stone Setting", "Plating & QC"].map((step, i) => (
+              <RevealOnScroll key={step} delay={i * 100}>
+                <div className="bg-black p-8 text-center hover:bg-white/5 transition-colors">
+                  <div className="text-gold text-2xl font-light mb-3">{String(i + 1).padStart(2, "0")}</div>
+                  <div className="text-white text-sm font-light tracking-wide">{step}</div>
                 </div>
               </RevealOnScroll>
             ))}
           </div>
-          <RevealOnScroll delay={400}>
-            <div className="text-center mt-12">
-              <Link href="/services" className="btn-gold text-xs">Full Service Details</Link>
-            </div>
-          </RevealOnScroll>
+          <div className="text-center mt-10">
+            <Link href="/services" className="btn-secondary">
+              View Full Process
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* ─── PRODUCT CATEGORIES ─── */}
-      <section className="py-28" style={{ background: "var(--warm-white)" }}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="section-padding bg-white">
+        <div className="container-luxury">
           <RevealOnScroll>
             <div className="text-center mb-16">
-              <p className="section-label mb-4">Collections</p>
-              <h2 className="font-display font-light text-charcoal-900" style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
-                Product <span className="italic gold-text">Categories</span>
+              <p className="text-gold text-xs tracking-[0.3em] uppercase mb-4">Collections</p>
+              <h2 className="text-3xl md:text-4xl font-light text-black mb-4">
+                Custom OEM Jewelry Categories
               </h2>
+              <p className="text-gray-500 max-w-xl mx-auto">
+                Sterling silver 925, gold 9k–18k, brass — manufactured to your exact specifications with <strong>low MOQ starting at 30 pieces</strong>.
+              </p>
             </div>
           </RevealOnScroll>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {categories.map((cat, i) => (
-              <RevealOnScroll key={cat.title} delay={i * 120}>
-                <Link href={cat.href} className="block product-card group">
-                  <div className="relative overflow-hidden" style={{ paddingBottom: "130%" }}>
-                    <div className="absolute inset-0">
-                      <SafeImage src={cat.img} alt={cat.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
-                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%)" }} />
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-400">
-                      <h3 className="text-white font-display font-light text-3xl mb-1" style={{ fontFamily: "var(--font-cormorant)" }}>{cat.title}</h3>
-                      <p className="text-gold-400 text-[10px] tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-400">{cat.desc}</p>
-                    </div>
+              <RevealOnScroll key={cat.slug} delay={i * 80}>
+                <Link href={`/products/${cat.slug}`} className="group block">
+                  <div className="relative aspect-square overflow-hidden bg-gray-100 mb-4">
+                    <SafeImage
+                      src={cat.img}
+                      alt={`${cat.name} OEM jewelry manufacturer Thailand`}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                   </div>
+                  <h3 className="text-lg font-light text-black tracking-wide mb-1">{cat.name}</h3>
+                  <p className="text-xs text-gray-500">{cat.desc}</p>
                 </Link>
               </RevealOnScroll>
             ))}
           </div>
-          <RevealOnScroll delay={400}>
-            <div className="text-center mt-12">
-              <Link href="/products" className="btn-gold text-xs">View All Products</Link>
-            </div>
-          </RevealOnScroll>
-        </div>
-      </section>
-
-      {/* ─── FACTORY PREVIEW ─── */}
-      <section className="py-28" style={{ background: "var(--cream)" }}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <RevealOnScroll>
-            <div className="text-center mb-16">
-              <p className="section-label mb-4">Inside Our Factory</p>
-              <h2 className="font-display font-light text-charcoal-900" style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
-                Where <span className="italic gold-text">Precision</span> Meets Craft
-              </h2>
-              <p className="text-charcoal-400 text-sm mt-4 max-w-xl mx-auto leading-relaxed">
-                Our Bangkok facility houses every stage of production — all under one roof.
-              </p>
-            </div>
-          </RevealOnScroll>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {factoryPreviews.map((f, i) => (
-              <RevealOnScroll key={f.title} delay={i * 100}>
-                <div className="group overflow-hidden">
-                  <div className="relative overflow-hidden" style={{ aspectRatio: "4/3" }}>
-                    <SafeImage src={f.img} alt={f.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
-                  </div>
-                  <div className="pt-5 pb-2 border-b border-charcoal-200">
-                    <h3 className="font-display text-xl text-charcoal-900 mb-1" style={{ fontFamily: "var(--font-cormorant)" }}>{f.title}</h3>
-                    <p className="text-charcoal-400 text-xs">{f.desc}</p>
-                  </div>
-                </div>
-              </RevealOnScroll>
-            ))}
+          <div className="text-center mt-12">
+            <Link href="/products" className="btn-outline">
+              View All Products
+            </Link>
           </div>
-          <RevealOnScroll delay={350}>
-            <div className="text-center mt-12">
-              <Link href="/services" className="btn-gold text-xs">Explore Our Process</Link>
-            </div>
-          </RevealOnScroll>
         </div>
       </section>
 
-      {/* ─── VIDEO HOMEPAGE ─── */}
+      {/* ─── FACTORY SECTIONS ─── */}
+      {factoryItems.map((item, idx) => (
+        <section
+          key={item.title}
+          className={`section-padding ${idx % 2 === 0 ? "bg-gray-50" : "bg-white"}`}
+        >
+          <div className="container-luxury">
+            <RevealOnScroll>
+              <div className="mb-10">
+                <p className="text-gold text-xs tracking-[0.3em] uppercase mb-3">Our Facility</p>
+                <h2 className="text-2xl md:text-3xl font-light text-black mb-3">{item.title}</h2>
+                <p className="text-gray-600 max-w-2xl leading-relaxed">{item.desc}</p>
+              </div>
+            </RevealOnScroll>
+            <div className="grid md:grid-cols-3 gap-4">
+              {item.images.map((img, j) => (
+                <RevealOnScroll key={j} delay={j * 100}>
+                  <div className="aspect-[4/3] overflow-hidden bg-gray-200">
+                    <SafeImage
+                      src={img}
+                      alt={`${item.title} - P&N Jewelry factory Bangkok Thailand`}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                </RevealOnScroll>
+              ))}
+            </div>
+          </div>
+        </section>
+      ))}
+
+      {/* ─── VIDEO SECTION ─── */}
       <VideoSection
-        youtubeId="NYG46nwFnto"
-        label="P&N Jewelry"
-        title="See Our"
-        subtitle="Craftsmanship in Action"
-        description="A glimpse into our Bangkok facility — where every piece is crafted with precision and care."
-        dark={true}
+        videoId="NYG46nwFnto"
+        title="Watch Our Manufacturing Process"
+        subtitle="See how we craft precision OEM jewelry in our Bangkok factory — from design to finished piece."
       />
 
       {/* ─── WHY CHOOSE US ─── */}
-      <section className="py-28" style={{ background: "var(--warm-white)" }}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="section-padding bg-black">
+        <div className="container-luxury">
           <RevealOnScroll>
             <div className="text-center mb-16">
-              <p className="section-label mb-4">Why P&N Jewelry</p>
-              <h2 className="font-display font-light text-charcoal-900" style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
-                The Partner Brands <span className="italic gold-text">Trust</span>
+              <p className="text-gold text-xs tracking-[0.3em] uppercase mb-4">Why Choose Us</p>
+              <h2 className="text-3xl md:text-4xl font-light text-white mb-4">
+                Why Global Brands Choose P&amp;N Jewelry
               </h2>
+              <p className="text-white/50 max-w-2xl mx-auto">
+                Brands from the <strong className="text-white/70">USA, UK, Japan, Canada, Australia, Germany, and Russia</strong> trust us for consistent quality, transparent communication, and reliable delivery.
+              </p>
             </div>
           </RevealOnScroll>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {whyUs.map((item, i) => (
-              <RevealOnScroll key={item.title} delay={i * 100}>
-                <div className="border border-charcoal-100 p-8 hover:border-gold-300 transition-all duration-400 group">
-                  <div className="text-3xl mb-6 inline-block" style={{ color: "var(--gold)" }}>{item.icon}</div>
-                  <h3 className="font-display text-xl text-charcoal-900 mb-3" style={{ fontFamily: "var(--font-cormorant)" }}>{item.title}</h3>
-                  <p className="text-charcoal-400 text-xs leading-relaxed">{item.desc}</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {reasons.map((r, i) => (
+              <RevealOnScroll key={r.title} delay={i * 80}>
+                <div className="text-center border border-white/10 p-8 hover:border-gold/40 transition-colors">
+                  <div className="text-gold text-3xl mb-4">{r.icon}</div>
+                  <h3 className="text-white font-light mb-3 tracking-wide">{r.title}</h3>
+                  <p className="text-white/50 text-sm leading-relaxed">{r.desc}</p>
                 </div>
               </RevealOnScroll>
             ))}
           </div>
-          <RevealOnScroll delay={400}>
-            <div className="text-center mt-12">
-              <Link href="/why-us" className="btn-gold text-xs">All Advantages</Link>
-            </div>
-          </RevealOnScroll>
+          <div className="text-center mt-12">
+            <Link href="/why-us" className="btn-secondary">
+              Learn More
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* ─── CONTACT CTA ─── */}
-      <section className="py-32 relative overflow-hidden" style={{ background: "var(--cream)" }}>
-        <div className="relative max-w-3xl mx-auto px-6 text-center">
+      <section className="section-padding bg-white">
+        <div className="container-luxury text-center">
           <RevealOnScroll>
-            <p className="section-label mb-6">Get in Touch</p>
-            <h2 className="font-display font-light text-charcoal-900 mb-6" style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2.2rem, 5vw, 4rem)", lineHeight: 1.1 }}>
-              Ready to Create Your <span className="italic gold-text">Next Collection?</span>
+            <p className="text-gold text-xs tracking-[0.3em] uppercase mb-4">Start Your Project</p>
+            <h2 className="text-3xl md:text-4xl font-light text-black mb-6">
+              Ready to Manufacture Your Jewelry Collection?
             </h2>
-            <p className="text-charcoal-500 text-sm leading-relaxed mb-10 max-w-md mx-auto">
-              Contact our team for a free consultation and quote. We work with brands of all sizes.
+            <p className="text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+              Whether you are a startup building your first collection or an established brand looking for a reliable <strong>private label jewelry manufacturer in Thailand</strong>, we are ready to help. <strong>MOQ from 30 pieces per design.</strong> Send us your idea and receive a quote within 24 hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="btn-gold-filled text-xs px-12 py-4">Request a Free Quote</Link>
-              <a href="https://wa.me/66617898877" target="_blank" rel="noopener noreferrer" className="btn-gold text-xs px-12 py-4">WhatsApp Us</a>
+              <Link href="/contact" className="btn-primary">
+                Request a Free Quote
+              </Link>
+              <a
+                href="https://wa.me/66617898877"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline"
+              >
+                WhatsApp Us Now
+              </a>
             </div>
           </RevealOnScroll>
         </div>
       </section>
-    </>
+    </main>
   );
 }
