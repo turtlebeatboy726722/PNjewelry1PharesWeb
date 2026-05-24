@@ -66,9 +66,9 @@ export default function AboutPage() {
   return (
     <main>
       <PageHero
+        label="About Us"
         title="40+ Years of OEM Jewelry Manufacturing"
         subtitle="Bangkok, Thailand"
-        description="P&N Jewelry Limited Partnership — a trusted custom jewelry manufacturer serving global brands for over four decades."
       />
 
       {/* ─── COMPANY STORY ─── */}
