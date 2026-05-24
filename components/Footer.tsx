@@ -62,6 +62,7 @@ export default function Footer() {
                 { href: "/products/bracelets", label: "— Bracelets" },
                 { href: "/products/earrings", label: "— Earrings" },
                 { href: "/why-us", label: "Why Choose Us" },
+                { href: "/blog", label: "Blog" },
                 { href: "/contact", label: "Contact" },
               ].map((l) => (
                 <li key={l.href}>

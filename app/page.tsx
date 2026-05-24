@@ -266,6 +266,44 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ─── BLOG PREVIEW ─── */}
+      <section className="py-28" style={{ background: "var(--ink)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <RevealOnScroll>
+            <div className="text-center mb-16">
+              <p className="section-label mb-4">Manufacturing Insights</p>
+              <h2 className="font-display font-light text-white" style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
+                OEM Jewelry <span className="italic gold-text">Knowledge Base</span>
+              </h2>
+              <p className="text-charcoal-400 text-sm mt-4 max-w-xl mx-auto leading-relaxed">
+                Practical guides for jewelry brands on OEM manufacturing, low MOQ production, and private label sourcing in Thailand.
+              </p>
+            </div>
+          </RevealOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { slug: "oem-jewelry-manufacturer-thailand", tag: "Sourcing Guide", title: "How to Find the Right OEM Jewelry Manufacturer in Thailand", desc: "What to look for, red flags to avoid, and why Bangkok factories deliver better quality." },
+              { slug: "low-moq-jewelry-manufacturer", tag: "MOQ & Pricing", title: "Low MOQ Jewelry Manufacturing: How Small Brands Can Start", desc: "Starting a jewelry brand? MOQ as low as 30 pieces without quality compromise." },
+              { slug: "thailand-vs-china-jewelry-manufacturing", tag: "Comparison", title: "Thailand vs China for Jewelry Manufacturing: An Honest Comparison", desc: "Quality, MOQ, price, communication — which country is right for your brand?" },
+            ].map((post, i) => (
+              <RevealOnScroll key={post.slug} delay={i * 100}>
+                <Link href={`/blog/${post.slug}`} className="block group border border-charcoal-800 p-8 hover:border-gold-400 transition-all duration-400">
+                  <span className="text-[10px] tracking-widest uppercase mb-4 block" style={{ color: "var(--gold)" }}>{post.tag}</span>
+                  <h3 className="font-display font-light text-white text-xl mb-3 leading-snug group-hover:text-gold-300 transition-colors duration-300" style={{ fontFamily: "var(--font-cormorant)" }}>{post.title}</h3>
+                  <p className="text-charcoal-400 text-xs leading-relaxed mb-6">{post.desc}</p>
+                  <span className="text-[10px] tracking-widest uppercase border-b pb-px" style={{ color: "var(--gold)", borderColor: "var(--gold)" }}>Read Article →</span>
+                </Link>
+              </RevealOnScroll>
+            ))}
+          </div>
+          <RevealOnScroll delay={350}>
+            <div className="text-center mt-12">
+              <Link href="/blog" className="btn-gold text-xs">View All Articles</Link>
+            </div>
+          </RevealOnScroll>
+        </div>
+      </section>
+
       {/* ─── CONTACT CTA ─── */}
       <section className="py-32 relative overflow-hidden" style={{ background: "var(--cream)" }}>
         <div className="relative max-w-3xl mx-auto px-6 text-center">
