@@ -225,8 +225,10 @@ export default function AboutPage() {
       {/* ─── VIDEO ─── */}
       <VideoSection
         youtubeId="cozkxxdlhto"
-        title="Inside Our Bangkok Jewelry Factory"
-        subtitle="A full tour of our OEM manufacturing facility — the same process trusted by jewelry brands in the USA, UK, Japan, Canada, Australia, Germany, and Russia for over 40 years."
+        label="Factory Tour"
+        title="Inside Our"
+        subtitle="Bangkok Jewelry Factory"
+        description="A full tour of our OEM manufacturing facility — the same process trusted by jewelry brands in the USA, UK, Japan, Canada, Australia, Germany, and Russia for over 40 years."
       />
 
       {/* ─── CTA ─── */}
