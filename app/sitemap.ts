@@ -16,12 +16,31 @@ const enPages = [
   { path: "/contact", priority: 0.9, freq: "monthly" },
 ];
 
+const blogPages = [
+  { path: "/blog", priority: 0.8, freq: "weekly" },
+  { path: "/blog/oem-jewelry-manufacturer-thailand", priority: 0.9, freq: "monthly" },
+  { path: "/blog/low-moq-jewelry-manufacturer", priority: 0.8, freq: "monthly" },
+  { path: "/blog/private-label-jewelry-manufacturer-bangkok", priority: 0.8, freq: "monthly" },
+  { path: "/blog/thailand-vs-china-jewelry-manufacturing", priority: 0.8, freq: "monthly" },
+  { path: "/blog/how-to-start-jewelry-brand-manufacturer", priority: 0.8, freq: "monthly" },
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const entries: MetadataRoute.Sitemap = [];
 
   // English pages
   for (const page of enPages) {
+    entries.push({
+      url: `${BASE}${page.path}`,
+      lastModified: now,
+      changeFrequency: page.freq as MetadataRoute.Sitemap[number]["changeFrequency"],
+      priority: page.priority,
+    });
+  }
+
+  // Blog pages (English only)
+  for (const page of blogPages) {
     entries.push({
       url: `${BASE}${page.path}`,
       lastModified: now,
