@@ -85,12 +85,57 @@ export const metadata: Metadata = {
   },
 };
 
+// ▼▼▼ เพิ่มใหม่: JSON-LD Structured Data สำหรับ LocalBusiness/Organization ▼▼▼
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.pnjewelrymfg.com/#organization",
+  name: "P&N Jewelry Limited Partnership",
+  alternateName: "P&N Jewelry",
+  url: "https://www.pnjewelrymfg.com",
+  logo: "https://www.pnjewelrymfg.com/images/hero/hero-bg.jpg",
+  image: "https://www.pnjewelrymfg.com/images/hero/hero-bg.jpg",
+  description:
+    "925 sterling silver & gold vermeil OEM jewelry manufacturer in Bangkok, Thailand with 40+ years of experience. Custom design, casting, stone setting, and plating. Low MOQ 30 pieces.",
+  email: "sale@pnjewelrymfg.com",
+  telephone: "+66617898877",
+  priceRange: "$$",
+  areaServed: [
+    "Thailand",
+    "USA",
+    "Japan",
+    "Canada",
+    "Australia",
+    "Germany",
+    "Spain",
+  ],
+  sameAs: ["https://wa.me/66617898877", "https://wa.me/66844598284"],
+  makesOffer: [
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Product",
+        name: "OEM Sterling Silver & Gold Vermeil Jewelry Manufacturing",
+      },
+    },
+  ],
+};
+// ▲▲▲ จบส่วนที่เพิ่มใหม่ ▲▲▲
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body>
+        {/* ▼ เพิ่มใหม่: ฝัง JSON-LD ลงในหน้า ▼ */}
+        <Script
+          id="ld-json-localbusiness"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {/* ▲ จบส่วนที่เพิ่มใหม่ ▲ */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-EJLR0FVKRP"
           strategy="afterInteractive"
