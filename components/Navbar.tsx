@@ -14,6 +14,7 @@ const getNavLinks = (lang: string) => {
     { href: `${prefix}/products`, label: lang === "ja" ? "製品" : lang === "de" ? "Produkte" : "Products" },
     { href: `${prefix}/why-us`, label: lang === "ja" ? "選ばれる理由" : lang === "de" ? "Warum wir" : "Why Us" },
     { href: `${prefix}/faq`, label: "FAQ" },
+  { href: `${prefix}/portfolio`, label: lang === "ja" ? "ポートフォリオ" : lang === "de" ? "Portfolio" : "Portfolio" },
     { href: `/blog`, label: "Blog" },
     { href: `${prefix}/contact`, label: lang === "ja" ? "お問い合わせ" : lang === "de" ? "Kontakt" : "Contact" },
   ];
