@@ -14,6 +14,7 @@ const enPages = [
   { path: "/why-us", priority: 0.7, freq: "monthly" },
   { path: "/faq", priority: 0.7, freq: "monthly" },
   { path: "/contact", priority: 0.9, freq: "monthly" },
+  { path: "/portfolio", priority: 0.8, freq: "weekly" },
 ];
 
 const blogPages = [
