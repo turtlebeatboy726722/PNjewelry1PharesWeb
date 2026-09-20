@@ -57,6 +57,27 @@ const faqs = [
     ],
   },
   {
+    category: "Materials & Stones",
+    items: [
+      {
+        q: "What is the difference between Natural Diamond and Lab Grown Diamond?",
+        a: "Natural diamonds are mined from the earth and carry geological history. Lab grown diamonds are physically and chemically identical — same hardness (10 Mohs), same brilliance — but grown in a controlled environment. Lab grown diamonds cost 60-80% less than natural diamonds of the same quality. Both are real diamonds. For OEM jewelry, lab grown diamonds are increasingly popular with USA, Canadian, and Australian brands seeking premium quality at accessible price points. We offer both options with GIA-certified stones available on request.",
+      },
+      {
+        q: "What is the difference between Gold Vermeil and Gold Plated?",
+        a: "Gold Vermeil is thick 18k gold plating (minimum 2.5 microns) applied over 925 sterling silver base. Gold Plated can be any gold thickness over any base metal (often brass or copper). Vermeil is the premium choice — it lasts significantly longer, meets international standards, and is required by law to be labeled 'vermeil' in many markets including the USA. For private label jewelry brands, we strongly recommend gold vermeil over standard gold plating for quality and longevity.",
+      },
+      {
+        q: "What is the MOQ for samples and prototypes?",
+        a: "For prototypes and sampling, MOQ is 1 piece per design. We produce a wax or silver prototype for your approval before committing to full production. Prototype cost is charged separately and is typically credited against your full production order. Full production MOQ starts at 30 pieces per design.",
+      },
+      {
+        q: "What are the lead times for samples and full production?",
+        a: "Prototype & Sampling: 7–14 business days from CAD approval. Full Production: 30–45 business days depending on quantity, design complexity, and stone setting requirements. Rush orders may be available — contact us to discuss your timeline. We provide production milestone updates with photos throughout the process.",
+      },
+    ],
+  },
+  {
     category: "Shipping & Logistics",
     items: [
       {
