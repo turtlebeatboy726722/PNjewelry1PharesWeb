@@ -7,13 +7,13 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 export const metadata: Metadata = {
   title: {
-    default: "P&N Jewelry | OEM Jewelry Manufacturer Thailand",
+    default: "925 Sterling Silver & Gold Vermeil OEM Jewelry Manufacturer | Bangkok, Thailand",
     template: "%s | P&N Jewelry",
   },
   description:
-    "P&N Jewelry Limited Partnership — OEM jewelry manufacturer in Thailand with 40+ years experience. Specializing in rings, necklaces, and bracelets for global brands. Low MOQ 30 pcs.",
+    "P&N Jewelry — 925 sterling silver & gold vermeil OEM jewelry manufacturer in Bangkok, Thailand. 40+ years experience. Natural diamond, lab grown diamond, moissanite & CZ setting. Custom CAD prototype, private label jewelry. Low MOQ 30 pcs.",
   keywords: [
-    // Core
+    // Core — เดิม
     "OEM jewelry manufacturer Thailand",
     "custom jewelry manufacturer Bangkok",
     "jewelry manufacturer Thailand",
@@ -21,28 +21,43 @@ export const metadata: Metadata = {
     "private label jewelry Thailand",
     "925 silver jewelry manufacturer",
     "gold jewelry manufacturer Thailand",
-    // Japan 🇯🇵
+    // NEW — Keywords ใหม่
+    "925 sterling silver jewelry manufacturer Thailand",
+    "OEM jewelry manufacturer Bangkok",
+    "gold vermeil jewelry manufacturer",
+    "lab grown diamond jewelry OEM Thailand",
+    "moissanite jewelry OEM Thailand",
+    "natural diamond jewelry manufacturer Thailand",
+    "CZ jewelry manufacturer Thailand",
+    "cubic zirconia jewelry OEM Bangkok",
+    "diamond jewelry OEM manufacturer Thailand",
+    "custom CAD jewelry prototype manufacturer",
+    "private label jewelry manufacturer Thailand",
+    "sterling silver OEM manufacturer Bangkok",
+    "gold vermeil OEM Bangkok",
+    "jewelry prototype manufacturer Thailand",
+    // Japan 🇯🇵 — เดิม
     "jewelry manufacturer Thailand Japan",
     "OEM jewelry Japan",
     "silver jewelry factory Asia",
     "jewelry manufacturer for Japanese brands",
     "ジュエリーメーカー タイ",
-    // Canada 🇨🇦
+    // Canada 🇨🇦 — เดิม
     "custom jewelry manufacturer Canada",
     "private label jewelry Canada",
     "jewelry factory Thailand Canada",
     "OEM jewelry Canada",
-    // Australia 🇦🇺
+    // Australia 🇦🇺 — เดิม
     "jewelry manufacturer Bangkok Australia",
     "OEM jewelry Australia",
     "wholesale jewelry Thailand Australia",
     "custom jewelry manufacturer Australia",
-    // Germany 🇩🇪
+    // Germany 🇩🇪 — เดิม
     "Schmuck Hersteller Thailand",
     "OEM Schmuck Thailand",
     "jewelry manufacturer Germany",
     "Schmuck Fabrik Bangkok",
-    // General Global
+    // General Global — เดิม
     "low MOQ jewelry manufacturer",
     "jewelry factory Bangkok",
     "fine jewelry manufacturer Asia",
@@ -50,9 +65,9 @@ export const metadata: Metadata = {
     "stone setting jewelry Thailand",
   ],
   openGraph: {
-    title: "P&N Jewelry | OEM Jewelry Manufacturer Thailand",
+    title: "925 Sterling Silver & Gold Vermeil OEM Jewelry Manufacturer | Bangkok, Thailand",
     description:
-      "40+ years of OEM jewelry manufacturing excellence. Serving global brands in Japan, Canada, Australia, Germany and beyond. Low MOQ 30 pcs.",
+      "40+ years OEM jewelry manufacturing. 925 sterling silver, gold vermeil, natural diamond, lab grown diamond, moissanite & CZ. Custom CAD prototype & private label jewelry. Bangkok, Thailand. Low MOQ 30 pcs.",
     type: "website",
     locale: "en_US",
     siteName: "P&N Jewelry Limited Partnership",
