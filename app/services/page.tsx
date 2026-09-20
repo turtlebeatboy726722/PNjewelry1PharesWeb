@@ -410,6 +410,90 @@ export default function ServicesPage() {
         </div>
       </section>
 
+
+      {/* MATERIALS */}
+      <section className="py-24" style={{ background: "var(--warm-white)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <RevealOnScroll>
+            <div className="text-center mb-16">
+              <p className="section-label mb-4">Materials We Work With</p>
+              <h2 className="font-display font-light text-charcoal-900" style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
+                925 Sterling Silver, Gold Vermeil <span className="italic gold-text">&amp; More</span>
+              </h2>
+            </div>
+          </RevealOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <RevealOnScroll>
+              <div>
+                <h3 className="font-display text-2xl text-charcoal-900 mb-6 pb-3 border-b border-charcoal-100" style={{ fontFamily: "var(--font-cormorant)" }}>Base Metals</h3>
+                <div className="space-y-4">
+                  {[{name:"925 Sterling Silver",desc:"Hallmarked 925. Our primary OEM material."},{name:"Gold 9k-18k",desc:"Yellow, white, and rose gold alloys."},{name:"Gold Vermeil",desc:"Thick 18k gold plating over 925 silver. Premium private label choice."},{name:"Brass & Copper",desc:"Cost-effective base metals for fashion jewelry."}].map((m)=>(<div key={m.name} className="flex gap-4 py-3 border-b border-charcoal-50"><span style={{color:"var(--gold)",flexShrink:0}}>◇</span><div><p className="text-charcoal-900 text-sm font-medium mb-0.5">{m.name}</p><p className="text-charcoal-400 text-xs leading-relaxed">{m.desc}</p></div></div>))}
+                </div>
+              </div>
+            </RevealOnScroll>
+            <RevealOnScroll delay={100}>
+              <div>
+                <h3 className="font-display text-2xl text-charcoal-900 mb-6 pb-3 border-b border-charcoal-100" style={{ fontFamily: "var(--font-cormorant)" }}>Plating Options</h3>
+                <div className="space-y-4">
+                  {[{name:"18k Yellow Gold",desc:"Classic warm gold finish."},{name:"18k Rose Gold",desc:"Trending pink-gold finish."},{name:"Rhodium",desc:"Bright white, anti-tarnish."},{name:"Black Rhodium",desc:"Dark dramatic finish."}].map((p)=>(<div key={p.name} className="flex gap-4 py-3 border-b border-charcoal-50"><span style={{color:"var(--gold)",flexShrink:0}}>◇</span><div><p className="text-charcoal-900 text-sm font-medium mb-0.5">{p.name}</p><p className="text-charcoal-400 text-xs leading-relaxed">{p.desc}</p></div></div>))}
+                </div>
+              </div>
+            </RevealOnScroll>
+          </div>
+        </div>
+      </section>
+
+      {/* STONES */}
+      <section className="py-24" style={{ background: "var(--ink)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <RevealOnScroll>
+            <div className="text-center mb-16">
+              <p className="section-label mb-4">Stone Setting Options</p>
+              <h2 className="font-display font-light text-white" style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
+                Natural Diamond, Lab Grown, <span className="italic gold-text">Moissanite & CZ</span>
+              </h2>
+            </div>
+          </RevealOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[{icon:"◈",title:"Natural Diamond",desc:"Round brilliant and fancy shapes. GIA-certified available. Ideal for fine jewelry brands."},{icon:"◇",title:"Lab Grown Diamond",desc:"Identical to natural diamonds. Conflict-free. Growing demand from USA, Canada, Australia."},{icon:"◉",title:"Moissanite",desc:"Superior brilliance. 9.25 Mohs hardness. Premium segment at accessible price."},{icon:"◎",title:"CZ (Cubic Zirconia)",desc:"AAA+ grade in all shapes and sizes. Cost-effective for fashion and bridge jewelry."}].map((s,i)=>(<RevealOnScroll key={s.title} delay={i*80}><div className="border border-charcoal-800 p-8 hover:border-gold-500 transition-all duration-400 group"><div className="text-3xl mb-5 inline-block" style={{color:"var(--gold)"}}>{s.icon}</div><h3 className="text-white font-display text-xl mb-3" style={{fontFamily:"var(--font-cormorant)"}}>{s.title}</h3><p className="text-charcoal-400 text-xs leading-relaxed">{s.desc}</p></div></RevealOnScroll>))}
+          </div>
+        </div>
+      </section>
+
+      {/* OEM VS ODM */}
+      <section className="py-24" style={{ background: "var(--cream)" }}>
+        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+          <RevealOnScroll>
+            <div className="text-center mb-14">
+              <p className="section-label mb-4">Important to Know</p>
+              <h2 className="font-display font-light text-charcoal-900" style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
+                We Are OEM — <span className="italic gold-text">Not ODM</span>
+              </h2>
+            </div>
+          </RevealOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <RevealOnScroll>
+              <div className="p-8 border-2" style={{borderColor:"var(--gold)"}}>
+                <div className="text-xs tracking-widest text-charcoal-400 uppercase mb-4">What We Do — OEM</div>
+                <h3 className="font-display text-2xl text-charcoal-900 mb-4" style={{fontFamily:"var(--font-cormorant)"}}>Original Equipment Manufacturing</h3>
+                <ul className="space-y-3 text-charcoal-500 text-sm">
+                  {["You provide the design — we manufacture it","Your sketch, CAD file, or reference image","We build a custom 3D CAD model for you","Sample approved — Full production begins","Your brand, your design, our craftsmanship"].map((item)=>(<li key={item} className="flex gap-2"><span style={{color:"var(--gold)",flexShrink:0}}>✓</span>{item}</li>))}
+                </ul>
+              </div>
+            </RevealOnScroll>
+            <RevealOnScroll delay={100}>
+              <div className="p-8 border border-charcoal-200 opacity-60">
+                <div className="text-xs tracking-widest text-charcoal-400 uppercase mb-4">What We Don&apos;t Do — ODM</div>
+                <h3 className="font-display text-2xl text-charcoal-900 mb-4" style={{fontFamily:"var(--font-cormorant)"}}>Original Design Manufacturing</h3>
+                <ul className="space-y-3 text-charcoal-500 text-sm">
+                  {["We do not have a ready-made product catalog","We do not sell pre-designed stock jewelry","Every piece we make starts from your design","We are a manufacturer, not a wholesaler"].map((item)=>(<li key={item} className="flex gap-2"><span className="text-charcoal-400 flex-shrink:0">✗</span>{item}</li>))}
+                </ul>
+              </div>
+            </RevealOnScroll>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-24 text-center" style={{ background: "var(--warm-white)" }}>
         <div className="max-w-2xl mx-auto px-6">
