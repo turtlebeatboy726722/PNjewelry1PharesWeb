@@ -5,7 +5,7 @@ import SafeImage from "@/components/SafeImage";
 import VideoSection from "@/components/VideoSection";
 
 export const metadata: Metadata = {
-  title: "P&N Jewelry | OEM Jewelry Manufacturer Thailand — 40+ Years",
+  title: "925 Sterling Silver & Gold Vermeil OEM Jewelry Manufacturer | Bangkok, Thailand",
   description:
     "P&N Jewelry — Thailand's leading OEM jewelry manufacturer in Bangkok with 40+ years experience. Custom silver and gold jewelry for brands in Japan, Canada, Australia, Germany & USA. Low MOQ 30 pcs.",
 };
