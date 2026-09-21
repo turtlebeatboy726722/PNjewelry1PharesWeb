@@ -202,6 +202,76 @@ export default function BlogPage() {
               </div>
             </article>
           ))}
+                <article style={{padding:"36px 0",borderBottom:"1px solid #eee",display:"grid",gridTemplateColumns:"1fr auto",gap:"24px",alignItems:"start"}}>
+                  <div>
+                    <div style={{display:"flex",gap:"12px",alignItems:"center",marginBottom:"10px"}}>
+                      <span style={{fontSize:"11px",letterSpacing:"0.1em",textTransform:"uppercase",color:"#888",background:"#f5f5f3",padding:"3px 10px"}}>Materials Guide</span>
+                      <span style={{fontSize:"13px",color:"#aaa"}}>September 2025 · 6 min read</span>
+                    </div>
+                    <h2 style={{fontSize:"20px",fontWeight:700,color:"#111",marginBottom:"8px",lineHeight:1.3}}>
+                      <Link style={{color:"inherit",textDecoration:"none"}} href="/blog/gold-vermeil-vs-gold-plated">Gold Vermeil vs Gold Plated: Which Should Your Jewelry Brand Choose?</Link>
+                    </h2>
+                    <p style={{color:"#666",fontSize:"15px",lineHeight:1.6,margin:"0 0 14px"}}>The real difference in thickness, base metal, durability and price — and which is right for your OEM brand.</p>
+                    <Link style={{fontSize:"13px",fontWeight:600,color:"#111",textDecoration:"none",letterSpacing:"0.05em",textTransform:"uppercase",borderBottom:"1px solid #111",paddingBottom:"1px"}} href="/blog/gold-vermeil-vs-gold-plated">Read Article →</Link>
+                  </div>
+                  <div style={{fontSize:"48px",fontWeight:800,color:"#f0f0ee",lineHeight:1,userSelect:"none",minWidth:"48px",textAlign:"right"}}>06</div>
+                </article>
+                <article style={{padding:"36px 0",borderBottom:"1px solid #eee",display:"grid",gridTemplateColumns:"1fr auto",gap:"24px",alignItems:"start"}}>
+                  <div>
+                    <div style={{display:"flex",gap:"12px",alignItems:"center",marginBottom:"10px"}}>
+                      <span style={{fontSize:"11px",letterSpacing:"0.1em",textTransform:"uppercase",color:"#888",background:"#f5f5f3",padding:"3px 10px"}}>Stones Guide</span>
+                      <span style={{fontSize:"13px",color:"#aaa"}}>September 2025 · 7 min read</span>
+                    </div>
+                    <h2 style={{fontSize:"20px",fontWeight:700,color:"#111",marginBottom:"8px",lineHeight:1.3}}>
+                      <Link style={{color:"inherit",textDecoration:"none"}} href="/blog/natural-diamond-vs-lab-grown-diamond">Natural Diamond vs Lab Grown Diamond for OEM Jewelry Brands (2025)</Link>
+                    </h2>
+                    <p style={{color:"#666",fontSize:"15px",lineHeight:1.6,margin:"0 0 14px"}}>Quality, cost, certification, and market demand — what every OEM jewelry brand needs to know.</p>
+                    <Link style={{fontSize:"13px",fontWeight:600,color:"#111",textDecoration:"none",letterSpacing:"0.05em",textTransform:"uppercase",borderBottom:"1px solid #111",paddingBottom:"1px"}} href="/blog/natural-diamond-vs-lab-grown-diamond">Read Article →</Link>
+                  </div>
+                  <div style={{fontSize:"48px",fontWeight:800,color:"#f0f0ee",lineHeight:1,userSelect:"none",minWidth:"48px",textAlign:"right"}}>07</div>
+                </article>
+                <article style={{padding:"36px 0",borderBottom:"1px solid #eee",display:"grid",gridTemplateColumns:"1fr auto",gap:"24px",alignItems:"start"}}>
+                  <div>
+                    <div style={{display:"flex",gap:"12px",alignItems:"center",marginBottom:"10px"}}>
+                      <span style={{fontSize:"11px",letterSpacing:"0.1em",textTransform:"uppercase",color:"#888",background:"#f5f5f3",padding:"3px 10px"}}>Materials Guide</span>
+                      <span style={{fontSize:"13px",color:"#aaa"}}>September 2025 · 8 min read</span>
+                    </div>
+                    <h2 style={{fontSize:"20px",fontWeight:700,color:"#111",marginBottom:"8px",lineHeight:1.3}}>
+                      <Link style={{color:"inherit",textDecoration:"none"}} href="/blog/925-sterling-silver-jewelry-manufacturing-guide">925 Sterling Silver Jewelry Manufacturing: The Complete Brand Guide</Link>
+                    </h2>
+                    <p style={{color:"#666",fontSize:"15px",lineHeight:1.6,margin:"0 0 14px"}}>Everything jewelry brands need to know about 925 sterling silver — standards, hallmarking, tarnish, and plating options.</p>
+                    <Link style={{fontSize:"13px",fontWeight:600,color:"#111",textDecoration:"none",letterSpacing:"0.05em",textTransform:"uppercase",borderBottom:"1px solid #111",paddingBottom:"1px"}} href="/blog/925-sterling-silver-jewelry-manufacturing-guide">Read Article →</Link>
+                  </div>
+                  <div style={{fontSize:"48px",fontWeight:800,color:"#f0f0ee",lineHeight:1,userSelect:"none",minWidth:"48px",textAlign:"right"}}>08</div>
+                </article>
+                <article style={{padding:"36px 0",borderBottom:"1px solid #eee",display:"grid",gridTemplateColumns:"1fr auto",gap:"24px",alignItems:"start"}}>
+                  <div>
+                    <div style={{display:"flex",gap:"12px",alignItems:"center",marginBottom:"10px"}}>
+                      <span style={{fontSize:"11px",letterSpacing:"0.1em",textTransform:"uppercase",color:"#888",background:"#f5f5f3",padding:"3px 10px"}}>Design Guide</span>
+                      <span style={{fontSize:"13px",color:"#aaa"}}>September 2025 · 7 min read</span>
+                    </div>
+                    <h2 style={{fontSize:"20px",fontWeight:700,color:"#111",marginBottom:"8px",lineHeight:1.3}}>
+                      <Link style={{color:"inherit",textDecoration:"none"}} href="/blog/how-to-design-custom-jewelry-oem-manufacturing">How to Design Custom Jewelry for OEM Manufacturing: A Step-by-Step Guide</Link>
+                    </h2>
+                    <p style={{color:"#666",fontSize:"15px",lineHeight:1.6,margin:"0 0 14px"}}>From sketch to CAD to sample to production — what you need to prepare and what your manufacturer handles.</p>
+                    <Link style={{fontSize:"13px",fontWeight:600,color:"#111",textDecoration:"none",letterSpacing:"0.05em",textTransform:"uppercase",borderBottom:"1px solid #111",paddingBottom:"1px"}} href="/blog/how-to-design-custom-jewelry-oem-manufacturing">Read Article →</Link>
+                  </div>
+                  <div style={{fontSize:"48px",fontWeight:800,color:"#f0f0ee",lineHeight:1,userSelect:"none",minWidth:"48px",textAlign:"right"}}>09</div>
+                </article>
+                <article style={{padding:"36px 0",borderBottom:"1px solid #eee",display:"grid",gridTemplateColumns:"1fr auto",gap:"24px",alignItems:"start"}}>
+                  <div>
+                    <div style={{display:"flex",gap:"12px",alignItems:"center",marginBottom:"10px"}}>
+                      <span style={{fontSize:"11px",letterSpacing:"0.1em",textTransform:"uppercase",color:"#888",background:"#f5f5f3",padding:"3px 10px"}}>Brand Strategy</span>
+                      <span style={{fontSize:"13px",color:"#aaa"}}>September 2025 · 6 min read</span>
+                    </div>
+                    <h2 style={{fontSize:"20px",fontWeight:700,color:"#111",marginBottom:"8px",lineHeight:1.3}}>
+                      <Link style={{color:"inherit",textDecoration:"none"}} href="/blog/oem-vs-private-label-jewelry">OEM vs Private Label Jewelry: What is the Difference and Which Do You Need?</Link>
+                    </h2>
+                    <p style={{color:"#666",fontSize:"15px",lineHeight:1.6,margin:"0 0 14px"}}>Understanding the two main manufacturing models and choosing the right one for your jewelry brand.</p>
+                    <Link style={{fontSize:"13px",fontWeight:600,color:"#111",textDecoration:"none",letterSpacing:"0.05em",textTransform:"uppercase",borderBottom:"1px solid #111",paddingBottom:"1px"}} href="/blog/oem-vs-private-label-jewelry">Read Article →</Link>
+                  </div>
+                  <div style={{fontSize:"48px",fontWeight:800,color:"#f0f0ee",lineHeight:1,userSelect:"none",minWidth:"48px",textAlign:"right"}}>10</div>
+                </article>
         </div>
       </main>
 
